@@ -2133,7 +2133,7 @@ body.lightbox-open{overflow:hidden}
   line-height:1;
   font-weight:850;
   letter-spacing:.13em;
-  animation:siteMarquee 24s linear infinite;
+  animation:siteMarquee 34s linear infinite;
   will-change:transform;
 }
 .site-marquee__set{

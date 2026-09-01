@@ -692,16 +692,34 @@ body.lightbox-open{overflow:hidden}
 .portfolio-marquee__track{
   width:max-content;
   display:flex;
-  gap:26px;
   align-items:center;
+  gap:0;
   padding:17px 0;
   font-size:12px;
   font-weight:800;
   letter-spacing:.12em;
-  animation:portfolioMarquee 22s linear infinite;
+  animation:portfolioMarquee 34s linear infinite;
+  will-change:transform;
 }
-.portfolio-marquee__track i{font-style:normal;color:var(--coral)}
-@keyframes portfolioMarquee{to{transform:translateX(-50%)}}
+.portfolio-marquee__set{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:26px;
+  padding-right:26px;
+}
+.portfolio-marquee__set span{
+  white-space:nowrap;
+}
+.portfolio-marquee__set i{
+  flex:0 0 auto;
+  font-style:normal;
+  color:var(--coral);
+}
+@keyframes portfolioMarquee{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}}
 
 .portfolio-overview__top{
   display:grid;

@@ -2627,3 +2627,86 @@ body{
     letter-spacing:-.06em;
   }
 }
+
+
+/* ==========================================
+   VISIBLE RUNNING PAW SHADOWS — CSS ONLY
+   ========================================== */
+.ambient-paws-css{
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  overflow:hidden;
+  opacity:.92;
+}
+.ambient-paws-css::before,
+.ambient-paws-css::after{
+  content:"";
+  position:absolute;
+  inset:-25%;
+  background-repeat:repeat;
+  background-size:190px 120px;
+  will-change:background-position, transform;
+}
+
+/* First trail: dark, very soft paw shadows */
+.ambient-paws-css::before{
+  opacity:.34;
+  transform:rotate(-7deg) scale(1.08);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='120' viewBox='0 0 190 120'%3E%3Cg fill='%23163047' fill-opacity='.16' transform='translate(30 34) rotate(-12 22 22)'%3E%3Cellipse cx='22' cy='29' rx='10' ry='8'/%3E%3Cellipse cx='10' cy='13' rx='4' ry='6'/%3E%3Cellipse cx='19' cy='8' rx='4' ry='6'/%3E%3Cellipse cx='29' cy='8' rx='4' ry='6'/%3E%3Cellipse cx='38' cy='13' rx='4' ry='6'/%3E%3C/g%3E%3Cg fill='%23163047' fill-opacity='.11' transform='translate(112 66) rotate(15 22 22)'%3E%3Cellipse cx='22' cy='29' rx='10' ry='8'/%3E%3Cellipse cx='10' cy='13' rx='4' ry='6'/%3E%3Cellipse cx='19' cy='8' rx='4' ry='6'/%3E%3Cellipse cx='29' cy='8' rx='4' ry='6'/%3E%3Cellipse cx='38' cy='13' rx='4' ry='6'/%3E%3C/g%3E%3C/svg%3E");
+  animation:ambientPawsDriftA 22s linear infinite;
+}
+
+/* Second trail: sparse, slightly larger shadows */
+.ambient-paws-css::after{
+  opacity:.20;
+  transform:rotate(8deg) scale(1.14);
+  background-size:260px 170px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170' viewBox='0 0 260 170'%3E%3Cg fill='%23163047' fill-opacity='.13' transform='translate(54 44) rotate(12 26 26)'%3E%3Cellipse cx='26' cy='34' rx='12' ry='9'/%3E%3Cellipse cx='12' cy='15' rx='4.8' ry='7'/%3E%3Cellipse cx='23' cy='9' rx='4.8' ry='7'/%3E%3Cellipse cx='35' cy='9' rx='4.8' ry='7'/%3E%3Cellipse cx='46' cy='15' rx='4.8' ry='7'/%3E%3C/g%3E%3C/svg%3E");
+  animation:ambientPawsDriftB 31s linear infinite;
+}
+@keyframes ambientPawsDriftA{
+  from{background-position:0 0}
+  to{background-position:380px 240px}
+}
+@keyframes ambientPawsDriftB{
+  from{background-position:260px -170px}
+  to{background-position:-260px 170px}
+}
+
+/* Keep paw shadows behind actual content, but above the body background. */
+body > .header,
+body > main,
+body > .footer{
+  position:relative;
+  z-index:2;
+}
+
+/* The dark specialization block stays clean; paws appear mainly on light background areas. */
+.personal-expertise,
+.site-marquee,
+.portfolio-marquee{
+  position:relative;
+  z-index:3;
+}
+
+/* On mobile use fewer / softer paws. */
+@media (max-width:760px){
+  .ambient-paws-css::before{
+    opacity:.24;
+    background-size:165px 105px;
+  }
+  .ambient-paws-css::after{
+    opacity:.12;
+    background-size:230px 150px;
+  }
+}
+
+/* Accessibility: keep static paw shadows instead of removing them completely. */
+@media (prefers-reduced-motion:reduce){
+  .ambient-paws-css::before,
+  .ambient-paws-css::after{
+    animation:none!important;
+  }
+}

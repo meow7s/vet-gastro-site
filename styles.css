@@ -309,3 +309,187 @@ h1 span{color:var(--coral)}
   .footer__inner{grid-template-columns:1fr;align-items:start}
   .footer__right{justify-content:space-between}
 }
+
+
+/* Achievements / certificates */
+.section--achievements{
+  position:relative;
+  background:
+    radial-gradient(circle at 84% 8%, rgba(216,197,239,.36) 0 110px, transparent 111px),
+    radial-gradient(circle at 7% 92%, rgba(168,220,232,.32) 0 95px, transparent 96px);
+}
+.achievements-head{margin-bottom:38px}
+.achievements-layout{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:18px;
+  align-items:stretch;
+}
+.achievement-feature{
+  min-height:430px;
+  border-radius:30px;
+  padding:30px;
+  background:var(--ink);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.08);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+.achievement-feature::after{
+  content:"";
+  position:absolute;
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  border:46px solid rgba(255,255,255,.05);
+  right:-82px;
+  bottom:-90px;
+}
+.achievement-feature__top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  position:relative;
+  z-index:2;
+}
+.achievement-label{
+  display:inline-flex;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+  padding:8px 11px;
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.achievement-index{
+  font-size:12px;
+  font-weight:800;
+  opacity:.55;
+}
+.achievement-feature h3{
+  margin:52px 0 16px;
+  max-width:430px;
+  font-size:clamp(30px,3.6vw,50px);
+  line-height:1.02;
+  letter-spacing:-.05em;
+  position:relative;
+  z-index:2;
+}
+.achievement-feature p{
+  max-width:430px;
+  font-size:13px;
+  opacity:.72;
+  position:relative;
+  z-index:2;
+}
+.achievement-feature__chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:auto;
+  padding-top:30px;
+  position:relative;
+  z-index:2;
+}
+.achievement-feature__chips span{
+  padding:9px 12px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:800;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.11);
+}
+.certificate-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+.certificate-card{
+  min-height:207px;
+  border:1px solid rgba(22,48,71,.1);
+  border-radius:26px;
+  padding:22px;
+  color:var(--ink);
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  transition:.24s ease;
+  appearance:none;
+}
+.certificate-card:hover{
+  transform:translateY(-5px) rotate(-.3deg);
+  box-shadow:var(--shadow);
+}
+.certificate-card--coral{background:var(--coral-soft)}
+.certificate-card--lavender{background:var(--lavender)}
+.certificate-card--sky{background:var(--sky)}
+.certificate-card--yellow{background:var(--yellow)}
+.certificate-card__type{
+  display:inline-flex;
+  width:max-content;
+  padding:7px 9px;
+  border-radius:999px;
+  background:rgba(255,255,255,.52);
+  font-size:9px;
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+}
+.certificate-card__year{
+  margin:15px 0 0;
+  font-size:11px;
+  font-weight:800;
+  opacity:.52;
+}
+.certificate-card__title{
+  margin-top:11px;
+  max-width:250px;
+  font-size:18px;
+  line-height:1.12;
+  letter-spacing:-.03em;
+  font-weight:800;
+}
+.certificate-card__hint{
+  margin-top:auto;
+  padding-top:18px;
+  border-top:1px solid rgba(22,48,71,.13);
+  font-size:10px;
+  font-weight:800;
+  opacity:.62;
+}
+.achievements-note{
+  margin-top:16px;
+  border:1px dashed rgba(22,48,71,.22);
+  border-radius:20px;
+  padding:16px 18px;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  background:rgba(255,255,255,.34);
+}
+.achievements-note span{
+  color:var(--coral);
+  font-size:19px;
+  line-height:1;
+  margin-top:2px;
+}
+.achievements-note p{
+  margin:0;
+  font-size:11px;
+  opacity:.68;
+}
+
+@media (max-width:980px){
+  .achievements-layout{grid-template-columns:1fr}
+  .achievement-feature{min-height:340px}
+}
+@media (max-width:680px){
+  .certificate-grid{grid-template-columns:1fr}
+  .achievement-feature{padding:24px;min-height:320px}
+  .certificate-card{min-height:190px}
+}

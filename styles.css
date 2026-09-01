@@ -2724,3 +2724,134 @@ body > .footer{
 .portfolio-stack__sticker{
   opacity:1!important;
 }
+
+
+/* ==========================================
+   SPARKLING "SIGN UP" BUTTONS
+   ========================================== */
+.sparkle-cta{
+  position:relative;
+  overflow:visible;
+  isolation:isolate;
+}
+.sparkle-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:
+    linear-gradient(115deg,
+      transparent 0%,
+      transparent 34%,
+      rgba(255,255,255,.10) 42%,
+      rgba(255,255,255,.38) 50%,
+      rgba(255,255,255,.10) 58%,
+      transparent 68%,
+      transparent 100%);
+  transform:translateX(-135%) skewX(-18deg);
+  animation:ctaShineSweep 4.6s ease-in-out infinite;
+  z-index:0;
+}
+.sparkle-cta > *{
+  position:relative;
+  z-index:2;
+}
+.sparkle-cta .cta-sparkles{
+  position:absolute;
+  inset:-12px;
+  pointer-events:none;
+  z-index:3;
+}
+.sparkle-cta .cta-spark{
+  position:absolute;
+  width:10px;
+  height:10px;
+  opacity:0;
+  transform:scale(.45) rotate(0deg);
+  animation:ctaSparkle 2.8s ease-in-out infinite;
+}
+.sparkle-cta .cta-spark::before,
+.sparkle-cta .cta-spark::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-radius:999px;
+}
+.sparkle-cta .cta-spark::before{
+  width:2px;
+  height:10px;
+  background:currentColor;
+}
+.sparkle-cta .cta-spark::after{
+  width:10px;
+  height:2px;
+  background:currentColor;
+}
+.sparkle-cta .cta-spark--1{top:2px;right:24px;animation-delay:0s}
+.sparkle-cta .cta-spark--2{top:50%;right:-6px;animation-delay:.9s}
+.sparkle-cta .cta-spark--3{bottom:4px;left:18px;animation-delay:1.7s}
+.sparkle-cta .cta-spark--4{top:-4px;left:26px;animation-delay:2.3s}
+
+.btn--primary.sparkle-cta .cta-spark,
+.header__cta.sparkle-cta .cta-spark{
+  color:rgba(247,222,120,.96);
+  filter:drop-shadow(0 0 6px rgba(247,222,120,.55));
+}
+.btn--ghost.sparkle-cta .cta-spark{
+  color:rgba(255,129,82,.9);
+  filter:drop-shadow(0 0 5px rgba(255,129,82,.26));
+}
+.header__cta.sparkle-cta{
+  overflow:hidden;
+}
+.header__cta.sparkle-cta .cta-sparkles{
+  inset:-8px;
+}
+.header__cta.sparkle-cta .cta-spark{
+  width:8px;
+  height:8px;
+}
+.header__cta.sparkle-cta .cta-spark::before{height:8px}
+.header__cta.sparkle-cta .cta-spark::after{width:8px}
+.header__cta.sparkle-cta:hover .cta-spark,
+.btn.sparkle-cta:hover .cta-spark{
+  animation-duration:2.15s;
+}
+@keyframes ctaShineSweep{
+  0%,12%{transform:translateX(-135%) skewX(-18deg);opacity:0}
+  20%{opacity:1}
+  34%{transform:translateX(145%) skewX(-18deg);opacity:1}
+  40%,100%{transform:translateX(145%) skewX(-18deg);opacity:0}
+}
+@keyframes ctaSparkle{
+  0%,100%{
+    opacity:0;
+    transform:scale(.35) rotate(0deg);
+  }
+  12%{
+    opacity:.15;
+    transform:scale(.7) rotate(18deg);
+  }
+  24%{
+    opacity:1;
+    transform:scale(1) rotate(45deg);
+  }
+  36%{
+    opacity:.52;
+    transform:scale(.72) rotate(72deg);
+  }
+  48%{
+    opacity:0;
+    transform:scale(.35) rotate(90deg);
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .sparkle-cta::before,
+  .sparkle-cta .cta-spark{
+    animation:none!important;
+    opacity:.35;
+  }
+}

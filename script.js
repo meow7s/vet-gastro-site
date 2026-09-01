@@ -609,3 +609,29 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     });
   }
 })();
+
+
+/* Sparkling effect for "Записаться" buttons */
+(function () {
+  const addSparkles = (el) => {
+    if (!el || el.classList.contains('sparkle-cta')) return;
+    el.classList.add('sparkle-cta');
+
+    const layer = document.createElement('span');
+    layer.className = 'cta-sparkles';
+    layer.setAttribute('aria-hidden', 'true');
+    layer.innerHTML = `
+      <i class="cta-spark cta-spark--1"></i>
+      <i class="cta-spark cta-spark--2"></i>
+      <i class="cta-spark cta-spark--3"></i>
+      <i class="cta-spark cta-spark--4"></i>
+    `;
+    el.appendChild(layer);
+  };
+
+  const candidates = document.querySelectorAll('a, button');
+  candidates.forEach((el) => {
+    const text = (el.textContent || '').trim().toLowerCase();
+    if (text.includes('запис')) addSparkles(el);
+  });
+})();

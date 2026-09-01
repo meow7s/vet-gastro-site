@@ -507,3 +507,105 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
   document.body.appendChild(field);
 })();
+
+
+/* =========================================================
+   MOTION POLISH V2
+   ========================================================= */
+(function () {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(pointer:fine)').matches;
+
+  /* Cursor aura */
+  if (!reducedMotion && finePointer) {
+    const aura = document.createElement('div');
+    aura.className = 'cursor-aura';
+    aura.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(aura);
+
+    let auraX = innerWidth / 2;
+    let auraY = innerHeight / 2;
+    let targetX = auraX;
+    let targetY = auraY;
+    let auraFrame = null;
+
+    function animateAura() {
+      auraX += (targetX - auraX) * .16;
+      auraY += (targetY - auraY) * .16;
+      aura.style.transform = `translate3d(${auraX}px,${auraY}px,0) translate(-50%,-50%)`;
+      if (Math.abs(targetX - auraX) > .2 || Math.abs(targetY - auraY) > .2) {
+        auraFrame = requestAnimationFrame(animateAura);
+      } else {
+        auraFrame = null;
+      }
+    }
+
+    window.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'touch') return;
+      targetX = event.clientX;
+      targetY = event.clientY;
+      aura.classList.add('is-visible');
+      if (!auraFrame) auraFrame = requestAnimationFrame(animateAura);
+    }, { passive:true });
+
+    document.documentElement.addEventListener('mouseleave', () => {
+      aura.classList.remove('is-visible');
+    });
+  }
+
+  /* Scroll progress */
+  const progress = document.createElement('div');
+  progress.className = 'scroll-progress';
+  progress.setAttribute('aria-hidden', 'true');
+  progress.innerHTML = '<div class="scroll-progress__bar"></div>';
+  document.body.appendChild(progress);
+  const progressBar = progress.firstElementChild;
+
+  let progressFrame = null;
+  function updateProgress() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const value = max > 0 ? Math.min(Math.max(scrollY / max, 0), 1) : 0;
+    progressBar.style.transform = `scaleX(${value})`;
+    progressFrame = null;
+  }
+  window.addEventListener('scroll', () => {
+    if (!progressFrame) progressFrame = requestAnimationFrame(updateProgress);
+  }, { passive:true });
+  window.addEventListener('resize', updateProgress, { passive:true });
+  updateProgress();
+
+  /* Refined doctor photo-card tilt */
+  if (!reducedMotion && finePointer) {
+    document.querySelectorAll('.doctor-photo-card').forEach(card => {
+      card.addEventListener('pointermove', (event) => {
+        if (event.pointerType === 'touch') return;
+        const rect = card.getBoundingClientRect();
+        const nx = (event.clientX - rect.left) / rect.width - .5;
+        const ny = (event.clientY - rect.top) / rect.height - .5;
+        const rx = ny * -4.5;
+        const ry = nx * 5.5;
+        card.style.transform = `perspective(1100px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`;
+        card.classList.add('is-photo-hover');
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+        card.classList.remove('is-photo-hover');
+      });
+    });
+  }
+
+  /* Tiny click pulse on interactive elements */
+  if (!reducedMotion && finePointer) {
+    document.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'touch') return;
+      if (!event.target.closest('a,button,.expertise-card,.personal-nav-card,.service-card')) return;
+
+      const ripple = document.createElement('span');
+      ripple.className = 'click-ripple';
+      ripple.style.left = `${event.clientX}px`;
+      ripple.style.top = `${event.clientY}px`;
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  }
+})();

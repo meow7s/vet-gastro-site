@@ -444,3 +444,66 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     });
   });
 })();
+
+
+/* Ambient cat paw shadows in background */
+(function () {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) return;
+  if (document.querySelector('.ambient-paw-field')) return;
+
+  const pawSvg = `
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <ellipse cx="32" cy="39" rx="14" ry="11"></ellipse>
+      <ellipse cx="18" cy="22" rx="5.5" ry="8"></ellipse>
+      <ellipse cx="29" cy="15" rx="5.5" ry="8"></ellipse>
+      <ellipse cx="41" cy="15" rx="5.5" ry="8"></ellipse>
+      <ellipse cx="52" cy="22" rx="5.5" ry="8"></ellipse>
+    </svg>`;
+
+  const field = document.createElement('div');
+  field.className = 'ambient-paw-field';
+  field.setAttribute('aria-hidden', 'true');
+
+  const runCount = window.innerWidth < 760 ? 3 : 5;
+  const topPositions = window.innerWidth < 760
+    ? [18, 44, 76]
+    : [14, 30, 49, 67, 84];
+
+  function createRun(index) {
+    const run = document.createElement('div');
+    const direction = index % 2 === 0 ? 'right' : 'left';
+    run.className = `ambient-paw-run ambient-paw-run--${direction}`;
+    run.style.top = `${topPositions[index % topPositions.length]}vh`;
+    run.style.setProperty('--run-duration', `${28 + Math.random() * 12}s`);
+    run.style.setProperty('--run-opacity', `${0.10 + Math.random() * 0.08}`);
+    run.style.setProperty('--run-tilt', `${(Math.random() * 10 - 5).toFixed(2)}deg`);
+    run.style.animationDelay = `${-Math.random() * 20}s`;
+
+    const inner = document.createElement('div');
+    inner.className = 'ambient-paw-run__inner';
+
+    const pawCount = window.innerWidth < 760 ? 7 : 10;
+    for (let i = 0; i < pawCount; i++) {
+      const paw = document.createElement('span');
+      paw.className = 'ambient-paw';
+      paw.innerHTML = pawSvg;
+      paw.style.left = `${8 + i * (100 / pawCount)}%`;
+      const y = 50 + (i % 2 === 0 ? -12 : 12) + (Math.random() * 10 - 5);
+      paw.style.top = `${y}%`;
+      paw.style.setProperty('--paw-size', `${20 + Math.random() * 12}px`);
+      paw.style.setProperty('--paw-rotate', `${(i % 2 === 0 ? -18 : 18) + (Math.random() * 8 - 4)}deg`);
+      paw.style.setProperty('--paw-delay', `${i * 0.18}s`);
+      inner.appendChild(paw);
+    }
+
+    run.appendChild(inner);
+    return run;
+  }
+
+  for (let i = 0; i < runCount; i++) {
+    field.appendChild(createRun(i));
+  }
+
+  document.body.appendChild(field);
+})();

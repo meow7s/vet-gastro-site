@@ -149,10 +149,9 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
 
 /* Cat paw cursor trail */
-(function(){
+(function () {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isFinePointer = window.matchMedia('(pointer: fine)').matches;
-  if (reducedMotion || !isFinePointer) return;
+  if (reducedMotion) return;
 
   const pawSvg = `
     <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
@@ -164,37 +163,58 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     </svg>`;
 
   let lastTime = 0;
-  let lastX = 0;
-  let lastY = 0;
+  let lastX = null;
+  let lastY = null;
   let flip = false;
 
   function spawnPaw(x, y) {
     const paw = document.createElement('span');
     paw.className = 'paw-trail';
-    const size = 15 + Math.random() * 7;
-    const angle = flip ? -13 : 13;
+
+    const size = 17 + Math.random() * 6;
+    const baseAngle = flip ? -12 : 12;
+
     paw.style.width = `${size}px`;
     paw.style.height = `${size}px`;
     paw.style.left = `${x}px`;
     paw.style.top = `${y}px`;
-    paw.style.setProperty('--paw-rotate', `${angle + (Math.random() * 6 - 3)}deg`);
+    paw.style.setProperty(
+      '--paw-rotate',
+      `${baseAngle + (Math.random() * 5 - 2.5)}deg`
+    );
+
     paw.innerHTML = pawSvg;
     document.body.appendChild(paw);
     flip = !flip;
-    window.setTimeout(() => paw.remove(), 1950);
+
+    window.setTimeout(() => paw.remove(), 1900);
   }
 
-  window.addEventListener('pointermove', (event) => {
+  function handlePointerMove(event) {
+    // Не создаём лапки при касании экрана.
+    if (event.pointerType === 'touch') return;
+
     const now = performance.now();
-    const dx = event.clientX - lastX;
-    const dy = event.clientY - lastY;
-    const distance = Math.hypot(dx, dy);
 
-    if (now - lastTime < 145 || distance < 52) return;
+    if (lastX === null || lastY === null) {
+      lastX = event.clientX;
+      lastY = event.clientY;
+      return;
+    }
 
-    spawnPaw(event.clientX - 4, event.clientY + 2);
+    const distance = Math.hypot(
+      event.clientX - lastX,
+      event.clientY - lastY
+    );
+
+    if (now - lastTime < 105 || distance < 38) return;
+
+    spawnPaw(event.clientX - 2, event.clientY + 3);
+
     lastTime = now;
     lastX = event.clientX;
     lastY = event.clientY;
-  }, { passive: true });
+  }
+
+  window.addEventListener('pointermove', handlePointerMove, { passive: true });
 })();

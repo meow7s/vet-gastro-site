@@ -1527,46 +1527,42 @@ body.lightbox-open{overflow:hidden}
    CAT PAW CURSOR TRAIL — delicate
    ========================================== */
 .paw-trail{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 22px;
-  height: 22px;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(.78) rotate(0deg);
-  animation: pawTrailFade 1.9s cubic-bezier(.22,.7,.25,1) forwards;
-  filter: blur(.1px) drop-shadow(0 5px 10px rgba(22,48,71,.045));
+  position:fixed;
+  left:0;
+  top:0;
+  width:21px;
+  height:21px;
+  pointer-events:none;
+  z-index:9999;
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.8) rotate(0deg);
+  animation:pawTrailFade 1.85s cubic-bezier(.22,.7,.25,1) forwards;
+  filter:drop-shadow(0 4px 9px rgba(22,48,71,.04));
 }
 .paw-trail svg{
-  width: 100%;
-  height: 100%;
-  display: block;
+  width:100%;
+  height:100%;
+  display:block;
 }
 .paw-trail path,
 .paw-trail ellipse,
 .paw-trail circle{
-  fill: rgba(22,48,71,.075);
+  fill:rgba(22,48,71,.115);
 }
 @keyframes pawTrailFade{
   0%{
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(.78) rotate(var(--paw-rotate, 0deg));
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.8) rotate(var(--paw-rotate,0deg));
   }
-  14%{
-    opacity: .42;
-  }
-  55%{
-    opacity: .19;
-  }
+  12%{opacity:.48}
+  48%{opacity:.24}
   100%{
-    opacity: 0;
-    transform: translate(-50%, -54%) scale(.96) rotate(var(--paw-rotate, 0deg));
+    opacity:0;
+    transform:translate(-50%,-56%) scale(.96) rotate(var(--paw-rotate,0deg));
   }
 }
-@media (prefers-reduced-motion: reduce){
-  .paw-trail{ display:none !important; }
+@media (prefers-reduced-motion:reduce){
+  .paw-trail{display:none!important}
 }
 
 

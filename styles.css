@@ -623,10 +623,10 @@ body.lightbox-open{overflow:hidden}
   appearance:none;
   border:0;
   padding:0;
-  background:white;
+  background:transparent;
   border-radius:24px;
   overflow:hidden;
-  box-shadow:0 30px 65px rgba(22,48,71,.17);
+  box-shadow:0 22px 50px rgba(22,48,71,.14);
   cursor:pointer;
   transform-origin:center;
 }
@@ -849,10 +849,10 @@ body.lightbox-open{overflow:hidden}
   display:block;
   width:min(100%,460px);
   aspect-ratio:1/1;
-  padding:16px;
-  border-radius:28px;
-  background:rgba(255,255,255,.75);
-  box-shadow:0 30px 70px rgba(0,0,0,.16);
+  padding:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
   transform:rotate(4deg);
   transition:.45s cubic-bezier(.2,.8,.2,1);
 }
@@ -861,7 +861,12 @@ body.lightbox-open{overflow:hidden}
   transform:rotate(0) scale(1.025);
 }
 .case-row__frame img{
-  width:100%;height:100%;object-fit:contain;border-radius:17px;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:18px;
+  box-shadow:0 18px 40px rgba(22,48,71,.12);
+  background:transparent;
 }
 
 .timeline-grid{
@@ -1076,8 +1081,8 @@ body.lightbox-open{overflow:hidden}
   min-width:max-content;
 }
 .brand__logo{
-  width:48px;
-  height:48px;
+  width:46px;
+  height:46px;
   object-fit:contain;
   flex:0 0 auto;
 }
@@ -1330,7 +1335,11 @@ body.lightbox-open{overflow:hidden}
 .personal-kicker span:first-child{color:#59c83c}
 .personal-kicker i{width:32px;height:1px;background:var(--ink);opacity:.35}
 .personal-name{
-  margin:0;max-width:760px;font-size:clamp(68px,8.6vw,124px);line-height:.82;letter-spacing:-.078em
+  margin:0;
+  max-width:760px;
+  font-size:clamp(52px,6.8vw,96px);
+  line-height:.84;
+  letter-spacing:-.072em;
 }
 .personal-role{
   margin:28px 0 0;font-size:clamp(21px,2.35vw,32px);line-height:1.16;letter-spacing:-.04em
@@ -1341,12 +1350,18 @@ body.lightbox-open{overflow:hidden}
   position:relative;min-height:550px;display:flex;align-items:center;justify-content:center
 }
 .personal-logo-card{
-  position:relative;width:min(100%,520px);min-height:525px;display:grid;place-items:center;overflow:hidden;
-  border-radius:48px;border:1px solid var(--line);
+  position:relative;
+  width:min(100%,520px);
+  min-height:525px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-radius:48px;
+  border:1px solid var(--line);
   background:
     radial-gradient(circle at 82% 15%,rgba(247,222,120,.8) 0 60px,transparent 61px),
-    radial-gradient(circle at 9% 82%,rgba(216,197,239,.6) 0 95px,transparent 96px),
-    rgba(255,255,255,.55);
+    radial-gradient(circle at 9% 82%,rgba(216,197,239,.45) 0 95px,transparent 96px),
+    linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.48));
   box-shadow:var(--shadow)
 }
 .personal-logo-card::before{
@@ -1357,9 +1372,12 @@ body.lightbox-open{overflow:hidden}
   position:absolute;top:25px;left:27px;font-size:13px;font-weight:850;color:#59c83c;letter-spacing:-.025em
 }
 .personal-logo-card img{
-  position:relative;z-index:2;width:92%;max-width:480px;
-  filter:drop-shadow(0 22px 32px rgba(22,48,71,.12));
-  animation:personalLogoFloat 6.4s ease-in-out infinite
+  position:relative;
+  z-index:2;
+  width:72%;
+  max-width:360px;
+  filter:drop-shadow(0 18px 26px rgba(22,48,71,.10));
+  animation:personalLogoFloat 6.4s ease-in-out infinite;
 }
 .personal-logo-card__meta{
   position:absolute;left:22px;right:22px;bottom:20px;display:flex;justify-content:space-between;gap:10px
@@ -1456,7 +1474,9 @@ body.lightbox-open{overflow:hidden}
 }
 .personal-contact__logo{display:grid;place-items:center}
 .personal-contact__logo img{
-  width:230px;max-width:100%;filter:drop-shadow(0 18px 28px rgba(22,48,71,.1))
+  width:170px;
+  max-width:100%;
+  filter:drop-shadow(0 14px 22px rgba(22,48,71,.10))
 }
 .personal-contact__copy>span{
   font-size:9px;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:var(--coral)
@@ -1477,7 +1497,7 @@ body.lightbox-open{overflow:hidden}
 @media (max-width:760px){
   .personal-hero{padding-top:38px}
   .personal-hero__top{min-height:auto}
-  .personal-name{font-size:58px}
+  .personal-name{font-size:46px}
   .personal-role{font-size:21px}
   .personal-logo-card{min-height:390px;border-radius:30px}
   .personal-logo-card__meta{flex-direction:column;align-items:flex-start}
@@ -1495,7 +1515,7 @@ body.lightbox-open{overflow:hidden}
   .personal-nav-card{min-height:220px}
   .personal-contact__box{grid-template-columns:1fr;padding:30px 24px;border-radius:30px}
   .personal-contact__logo{justify-content:start}
-  .personal-contact__logo img{width:180px}
+  .personal-contact__logo img{width:145px}
   .personal-contact__action{grid-column:auto}
 }
 @media (prefers-reduced-motion:reduce){
@@ -1547,4 +1567,10 @@ body.lightbox-open{overflow:hidden}
 }
 @media (prefers-reduced-motion: reduce){
   .paw-trail{ display:none !important; }
+}
+
+
+/* refined minimal logo variant */
+.personal-logo-card__label{
+  letter-spacing:-.015em;
 }

@@ -2710,3 +2710,17 @@ body > .footer{
     animation:none!important;
   }
 }
+
+
+/* Fix: keep the hero certificate stack always visible */
+.portfolio-stack{
+  opacity:1!important;
+  clip-path:none!important;
+  transform:none;
+}
+.portfolio-stack__card{
+  opacity:1!important;
+}
+.portfolio-stack__sticker{
+  opacity:1!important;
+}

@@ -59,7 +59,7 @@ document.addEventListener('keydown', (event) => {
 
 
 /* Certificate animations */
-const certCards = document.querySelectorAll('.certificate-item, .feature-cert');
+const certCards = document.querySelectorAll('.certificate-item, .feature-cert:not(.portfolio-stack__card)');
 certCards.forEach((card, index) => {
   card.classList.add('cert-reveal');
   card.style.setProperty('--reveal-delay', `${Math.min(index * 55, 500)}ms`);
@@ -297,7 +297,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   });
 
   /* Photo / major visual mask reveal */
-  const photoVisuals = document.querySelectorAll('.doctor-photo-card, .portrait-placeholder, .portfolio-stack');
+  const photoVisuals = document.querySelectorAll('.doctor-photo-card, .portrait-placeholder');
   photoVisuals.forEach(el => el.classList.add('photo-mask-reveal'));
   const photoObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

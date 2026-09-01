@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ветеринарный гастроэнтеролог и диетолог. Онлайн-консультации, разбор анализов, подбор лечебного и домашнего рациона." />
+  <title>Ветеринарный гастроэнтеролог и диетолог</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-noise"></div>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="На главную">
+        <span class="brand__mark">⌁</span>
+        <span class="brand__text">VET<span>GUT</span></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#services">Услуги</a>
+        <a href="#about">О враче</a>
+        <a href="#how">Как проходит</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="header__cta" href="#contacts">Записаться</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="eyebrow"><span class="dot"></span> консультации онлайн</div>
+          <h1>Здоровый ЖКТ<br><span>без лишних назначений</span></h1>
+          <p class="hero__lead">
+            Ветеринарная гастроэнтерология и диетология для собак и кошек.
+            Разбираю причину симптомов, обследования и рацион — последовательно и по делу.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contacts">Записаться на консультацию <span>↗</span></a>
+            <a class="btn btn--ghost" href="#services">Посмотреть услуги</a>
+          </div>
+
+          <div class="hero__facts">
+            <div><b>Онлайн</b><span>из любой страны</span></div>
+            <div><b>Evidence-based</b><span>без лишней терапии</span></div>
+            <div><b>Собаки и кошки</b><span>ЖКТ + питание</span></div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero-card">
+            <div class="hero-card__badge">гастроэнтерология</div>
+            <div class="pet-stage">
+              <svg class="pet-illustration" viewBox="0 0 560 520" role="img" aria-label="Стилизованные кот и собака">
+                <defs>
+                  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="18" stdDeviation="18" flood-opacity=".12"/>
+                  </filter>
+                </defs>
+
+                <circle cx="360" cy="210" r="165" fill="#D8C7F0"/>
+                <circle cx="210" cy="315" r="150" fill="#A9DCE8"/>
+                <circle cx="450" cy="380" r="60" fill="#F7DF79"/>
+
+                <!-- dog -->
+                <g filter="url(#shadow)" transform="translate(220,120)">
+                  <path d="M90 72 C45 10 15 42 32 118 C4 148 2 242 62 292 C105 328 186 318 222 256 C254 199 238 126 200 99 C222 31 176 13 142 75 Z"
+                        fill="#F2B47E"/>
+                  <path d="M48 96 C22 55 18 39 33 27 C57 9 79 41 90 79 Z" fill="#C98754"/>
+                  <path d="M182 87 C194 34 221 15 239 33 C252 47 240 78 211 110 Z" fill="#C98754"/>
+                  <ellipse cx="128" cy="175" rx="76" ry="70" fill="#F6C99F"/>
+                  <ellipse cx="108" cy="166" rx="10" ry="13" fill="#17263A"/>
+                  <ellipse cx="165" cy="166" rx="10" ry="13" fill="#17263A"/>
+                  <ellipse cx="137" cy="196" rx="17" ry="12" fill="#17263A"/>
+                  <path d="M119 215 Q137 233 156 215" fill="none" stroke="#17263A" stroke-width="7" stroke-linecap="round"/>
+                  <path d="M77 132 Q100 110 126 126" fill="none" stroke="#C98754" stroke-width="8" stroke-linecap="round"/>
+                  <path d="M148 126 Q177 108 197 133" fill="none" stroke="#C98754" stroke-width="8" stroke-linecap="round"/>
+                </g>
+
+                <!-- cat -->
+                <g filter="url(#shadow)" transform="translate(48,245)">
+                  <path d="M55 87 L83 25 L120 80 Q170 57 216 83 L255 30 L266 103
+                           C288 150 270 224 220 254 C166 286 81 266 50 206 C28 163 30 119 55 87 Z"
+                        fill="#F5F0E7"/>
+                  <path d="M69 83 L86 43 L111 78 Z" fill="#E9C5C3"/>
+                  <path d="M220 83 L250 47 L250 92 Z" fill="#E9C5C3"/>
+                  <ellipse cx="112" cy="146" rx="12" ry="15" fill="#17263A"/>
+                  <ellipse cx="193" cy="146" rx="12" ry="15" fill="#17263A"/>
+                  <path d="M145 166 Q157 174 169 166 Q158 191 145 166 Z" fill="#E89086"/>
+                  <path d="M156 181 Q139 196 126 183 M158 181 Q174 197 190 183" fill="none" stroke="#17263A" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M82 178 L28 169 M84 192 L28 197 M218 178 L272 168 M218 193 L270 205"
+                        fill="none" stroke="#17263A" stroke-width="4" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+
+            <div class="hero-card__note">
+              <span class="paw">✦</span>
+              <div>
+                <b>Понятный план действий</b>
+                <small>Что делать сейчас, что обследовать дальше и когда менять тактику.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-tag float-tag--one">диетология</div>
+          <div class="float-tag float-tag--two">кошки + собаки</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Направления работы">
+      <div class="ticker__track">
+        <span>Хроническая рвота</span><i>✦</i>
+        <span>Диарея</span><i>✦</i>
+        <span>Хроническая энтеропатия</span><i>✦</i>
+        <span>Подбор рациона</span><i>✦</i>
+        <span>Дефицит В9 / В12</span><i>✦</i>
+        <span>Эндоскопия ЖКТ</span><i>✦</i>
+        <span>Хроническая рвота</span><i>✦</i>
+        <span>Диарея</span><i>✦</i>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">услуги</span>
+            <h2>С чем я могу помочь</h2>
+          </div>
+          <p>От первичного разбора жалоб до долгосрочного ведения и коррекции рациона.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card service-card--coral">
+            <div class="service-card__top"><span>01</span><span>↗</span></div>
+            <h3>Первичная гастроэнтерологическая консультация</h3>
+            <p>Анамнез, анализ имеющихся исследований, дифференциальный список и пошаговый диагностический план.</p>
+            <div class="service-card__meta">60–90 минут · онлайн</div>
+          </article>
+
+          <article class="service-card service-card--lavender">
+            <div class="service-card__top"><span>02</span><span>↗</span></div>
+            <h3>Повторная консультация</h3>
+            <p>Оценка динамики, интерпретация новых результатов и корректировка лечения или питания.</p>
+            <div class="service-card__meta">по результатам обследований</div>
+          </article>
+
+          <article class="service-card service-card--sky">
+            <div class="service-card__top"><span>03</span><span>↗</span></div>
+            <h3>Ветеринарная диетология</h3>
+            <p>Подбор готового лечебного корма или индивидуального домашнего рациона с учётом заболевания.</p>
+            <div class="service-card__meta">рацион + схема перехода</div>
+          </article>
+
+          <article class="service-card service-card--yellow">
+            <div class="service-card__top"><span>04</span><span>↗</span></div>
+            <h3>Разбор анализов и обследований</h3>
+            <p>ОАК, биохимия, УЗИ, КТ, эндоскопия, гистология и другие результаты — с объяснением их клинического значения.</p>
+            <div class="service-card__meta">структурированное заключение</div>
+          </article>
+
+          <article class="service-card service-card--cream">
+            <div class="service-card__top"><span>05</span><span>↗</span></div>
+            <h3>Второе мнение</h3>
+            <p>Независимая оценка диагноза и назначений, если течение заболевания неясное или лечение не даёт ожидаемого ответа.</p>
+            <div class="service-card__meta">без дублирования лишних исследований</div>
+          </article>
+
+          <article class="service-card service-card--dark">
+            <div class="service-card__top"><span>06</span><span>↗</span></div>
+            <h3>Сопровождение</h3>
+            <p>Наблюдение после консультации: динамика симптомов, адаптация лечения и питания по мере получения новых данных.</p>
+            <div class="service-card__meta">индивидуальный формат</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--about" id="about">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <div class="portrait-placeholder">
+            <div class="portrait-placeholder__label">здесь можно поставить<br>ваше фото</div>
+            <svg viewBox="0 0 360 420" aria-hidden="true">
+              <circle cx="180" cy="128" r="72" fill="#F4C7B7"/>
+              <path d="M66 375 C76 262 126 220 180 220 C234 220 284 262 294 375 Z" fill="#173148"/>
+              <path d="M140 218 L180 292 L220 218" fill="#F6F1E8"/>
+              <circle cx="153" cy="126" r="7" fill="#173148"/>
+              <circle cx="207" cy="126" r="7" fill="#173148"/>
+              <path d="M156 158 Q180 174 204 158" fill="none" stroke="#173148" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="about-mini-card">
+            <span>✦</span>
+            <p>Медицина, которую можно объяснить владельцу простыми словами.</p>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <span class="section-kicker">о враче</span>
+          <h2>Спокойная коммуникация и клиническая логика</h2>
+          <p class="about-lead">
+            Моя задача — не просто выдать список назначений, а собрать историю заболевания в единую систему:
+            симптомы, рацион, результаты исследований и ответ на предыдущую терапию.
+          </p>
+
+          <div class="about-points">
+            <div>
+              <b>01</b>
+              <h4>Доказательный подход</h4>
+              <p>Рекомендации строятся на клинических данных и современных ветеринарных руководствах.</p>
+            </div>
+            <div>
+              <b>02</b>
+              <h4>Без «лечения анализа»</h4>
+              <p>Отклонения оцениваются в контексте симптомов и общей клинической картины.</p>
+            </div>
+            <div>
+              <b>03</b>
+              <h4>План понятен владельцу</h4>
+              <p>После консультации ясно, что делать сейчас и при каких условиях менять дальнейшую тактику.</p>
+            </div>
+          </div>
+
+          <a class="text-link" href="#contacts">Перейти к записи <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">как проходит</span>
+            <h2>Консультация в 4 шага</h2>
+          </div>
+          <p>Всё, что нужно для консультации, можно подготовить заранее онлайн.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <span class="step__num">01</span>
+            <div class="step__icon">⇩</div>
+            <h3>Вы присылаете данные</h3>
+            <p>Жалобы, рацион, вес, результаты анализов, УЗИ и предыдущие назначения.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">02</span>
+            <div class="step__icon">◌</div>
+            <h3>Я изучаю историю</h3>
+            <p>Собираю хронологию заболевания и отмечаю ключевые диагностические точки.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">03</span>
+            <div class="step__icon">↗</div>
+            <h3>Проводим консультацию</h3>
+            <p>Обсуждаем вероятные причины симптомов и дальнейшую тактику.</p>
+          </article>
+          <article class="step">
+            <span class="step__num">04</span>
+            <div class="step__icon">✓</div>
+            <h3>Получаете рекомендации</h3>
+            <p>Структурированный план обследования, лечения и питания.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--symptoms">
+      <div class="container symptoms">
+        <div class="symptoms__copy">
+          <span class="section-kicker section-kicker--light">когда стоит обратиться</span>
+          <h2>Если ЖКТ постоянно напоминает о себе</h2>
+          <p>Повторяющиеся симптомы — повод не только купировать очередное обострение, но и разобраться в причине.</p>
+          <a class="btn btn--light" href="#contacts">Обсудить случай <span>↗</span></a>
+        </div>
+
+        <div class="symptoms__tags">
+          <span>рвота</span>
+          <span>диарея</span>
+          <span>снижение аппетита</span>
+          <span>потеря веса</span>
+          <span>метеоризм</span>
+          <span>слизь в кале</span>
+          <span>нестабильный стул</span>
+          <span>избирательность в еде</span>
+          <span>хроническая энтеропатия</span>
+          <span>подозрение на пищевую реакцию</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">отзывы</span>
+            <h2>Что говорят владельцы</h2>
+          </div>
+          <p>В демо-версии оставлены нейтральные примеры — их легко заменить вашими реальными отзывами.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review">
+            <div class="review__stars">★★★★★</div>
+            <p>«После консультации впервые стало понятно, зачем нужны исследования и в какой последовательности их делать. У питомца наконец появилась стабильная схема питания.»</p>
+            <div class="review__person"><span>МК</span><b>Мария и кот Кекс</b></div>
+          </article>
+          <article class="review review--accent">
+            <div class="review__stars">★★★★★</div>
+            <p>«Понравилось, что назначения объяснялись спокойно и без запугивания. Получили подробный план и понимание, какие симптомы действительно важны.»</p>
+            <div class="review__person"><span>АН</span><b>Анна и собака Нора</b></div>
+          </article>
+          <article class="review">
+            <div class="review__stars">★★★★★</div>
+            <p>«Разобрали старые анализы и лечение, скорректировали рацион. Очень удобно, что рекомендации остаются в письменном виде и к ним можно вернуться.»</p>
+            <div class="review__person"><span>ЕС</span><b>Елена и кот Сэм</b></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-intro">
+          <span class="section-kicker">FAQ</span>
+          <h2>Частые вопросы</h2>
+          <p>Если вашего вопроса нет в списке — напишите перед записью, и я подскажу подходящий формат консультации.</p>
+          <div class="faq-paw">✦</div>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Можно ли провести консультацию полностью онлайн?<span>+</span></summary>
+            <p>Да. Для большинства гастроэнтерологических случаев первичный разбор истории, обследований и питания возможно провести дистанционно. При необходимости очного осмотра это будет отдельно указано в плане.</p>
+          </details>
+          <details>
+            <summary>Нужно ли заранее сдавать анализы?<span>+</span></summary>
+            <p>Не обязательно. Лучше сначала собрать уже имеющиеся результаты, чтобы не дублировать исследования без необходимости.</p>
+          </details>
+          <details>
+            <summary>Можно ли подобрать домашний рацион?<span>+</span></summary>
+            <p>Да. Рацион рассчитывается индивидуально с учётом вида, возраста, массы тела, заболевания, переносимости продуктов и цели кормления.</p>
+          </details>
+          <details>
+            <summary>Что нужно отправить перед консультацией?<span>+</span></summary>
+            <p>Краткую историю заболевания, текущий рацион и препараты, вес животного, результаты обследований и список основных вопросов.</p>
+          </details>
+          <details>
+            <summary>Можно ли обратиться только за вторым мнением?<span>+</span></summary>
+            <p>Да. Такой формат подходит, если уже есть диагноз и назначения, но требуется независимая оценка тактики.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contacts">
+      <div class="container contact-card">
+        <div class="contact-card__copy">
+          <span class="section-kicker">запись</span>
+          <h2>Расскажите, что происходит с питомцем</h2>
+          <p>Напишите в удобный мессенджер. Перед записью можно коротко описать жалобы и прикрепить последние обследования.</p>
+
+          <div class="contact-actions">
+            <a class="btn btn--primary" href="#" aria-label="Ссылка на Telegram">Telegram <span>↗</span></a>
+            <a class="btn btn--ghost" href="#" aria-label="Ссылка на WhatsApp">WhatsApp</a>
+          </div>
+
+          <small class="contact-note">Замените ссылки на ваши реальные контакты в файле index.html.</small>
+        </div>
+
+        <div class="contact-card__visual">
+          <div class="contact-bubble">
+            <span class="contact-bubble__small">онлайн</span>
+            <b>Можно начать<br>с одного сообщения</b>
+            <div class="contact-bubble__line"></div>
+            <span>Ответ → подходящий формат консультации</span>
+          </div>
+          <div class="contact-pet">ฅ^•ﻌ•^ฅ</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <a class="brand brand--footer" href="#top">
+          <span class="brand__mark">⌁</span>
+          <span class="brand__text">VET<span>GUT</span></span>
+        </a>
+        <p>Ветеринарная гастроэнтерология и диетология.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#services">Услуги</a>
+        <a href="#about">О враче</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <div class="footer__right">
+        <span>© 2026</span>
+        <a href="#top">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

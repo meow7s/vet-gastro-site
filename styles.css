@@ -1066,3 +1066,485 @@ body.lightbox-open{overflow:hidden}
   .portfolio-stack__card--1,.portfolio-stack__card--2,.portfolio-stack__card--3,
   .portfolio-stack__sticker,.portfolio-marquee__track{animation:none!important}
 }
+
+
+/* ==========================================
+   gastrolivet / personal identity
+   ========================================== */
+.brand--identity{
+  gap:11px;
+  min-width:max-content;
+}
+.brand__logo{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+.brand__identity{
+  display:flex;
+  flex-direction:column;
+  line-height:1.02;
+}
+.brand--identity .brand__text{
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.045em;
+  color:#59c83c;
+}
+.brand__owner{
+  margin-top:5px;
+  max-width:190px;
+  font-size:9px;
+  line-height:1.15;
+  font-weight:750;
+  letter-spacing:.015em;
+  color:var(--ink);
+  opacity:.72;
+}
+.brand--footer .brand__logo{
+  width:64px;
+  height:64px;
+}
+.brand--footer .brand__text{font-size:23px}
+.brand--footer .brand__owner{font-size:10px}
+
+.hero--personal{
+  position:relative;
+}
+.hero__brandline{
+  margin-top:24px;
+  color:#59c83c;
+  font-size:clamp(28px,3.3vw,46px);
+  line-height:1;
+  font-weight:800;
+  letter-spacing:-.055em;
+}
+.hero__name{
+  margin:10px 0 20px;
+  max-width:780px;
+  font-size:clamp(58px,7.6vw,108px);
+  line-height:.86;
+  letter-spacing:-.075em;
+}
+.hero__role{
+  margin:0 0 20px;
+  font-size:clamp(20px,2.2vw,30px);
+  line-height:1.18;
+  letter-spacing:-.035em;
+}
+.hero__role strong{
+  color:var(--coral);
+  font-weight:800;
+}
+.hero__lead--personal{
+  max-width:650px;
+  font-size:15px;
+}
+.hero__visual--logo{
+  min-height:600px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.brand-showcase{
+  position:relative;
+  width:min(100%,560px);
+  min-height:570px;
+  display:grid;
+  place-items:center;
+  border-radius:48px;
+  background:
+    radial-gradient(circle at 85% 18%,rgba(247,222,120,.85) 0 64px,transparent 65px),
+    linear-gradient(145deg,rgba(255,255,255,.7),rgba(255,255,255,.28));
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.brand-showcase::before{
+  content:"gastrolivet";
+  position:absolute;
+  left:-25px;
+  bottom:24px;
+  font-size:78px;
+  font-weight:800;
+  letter-spacing:-.075em;
+  color:rgba(22,48,71,.055);
+  transform:rotate(-90deg);
+  transform-origin:left bottom;
+}
+.brand-showcase__logo{
+  width:90%;
+  max-width:500px;
+  height:auto;
+  position:relative;
+  z-index:3;
+  filter:drop-shadow(0 22px 30px rgba(22,48,71,.12));
+  animation:brandFloat 6.5s ease-in-out infinite;
+}
+.brand-showcase__halo{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(1px);
+}
+.brand-showcase__halo--one{
+  width:260px;height:260px;
+  background:rgba(80,163,255,.18);
+  left:-70px;top:70px;
+}
+.brand-showcase__halo--two{
+  width:230px;height:230px;
+  background:rgba(89,200,60,.18);
+  right:-70px;bottom:60px;
+}
+.brand-showcase__caption{
+  position:absolute;
+  z-index:4;
+  left:24px;
+  right:24px;
+  bottom:22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:15px 17px;
+  border-radius:18px;
+  background:rgba(255,253,248,.88);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(22,48,71,.1);
+}
+.brand-showcase__caption span{
+  font-size:11px;
+  font-weight:800;
+}
+.brand-showcase__caption b{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#59c83c;
+}
+@keyframes brandFloat{
+  0%,100%{transform:translateY(0) rotate(-.4deg)}
+  50%{transform:translateY(-10px) rotate(.45deg)}
+}
+
+.page-signature{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding-top:28px;
+  margin-bottom:-12px;
+}
+.page-signature img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+.page-signature div{
+  display:flex;
+  flex-direction:column;
+}
+.page-signature b{
+  font-size:12px;
+  letter-spacing:-.02em;
+}
+.page-signature span{
+  margin-top:3px;
+  font-size:9px;
+  font-weight:650;
+  opacity:.58;
+}
+.inner-person{
+  margin:12px 0 -7px;
+  color:#59c83c;
+  font-size:clamp(24px,3vw,40px);
+  font-weight:800;
+  letter-spacing:-.05em;
+}
+.portrait-placeholder--brand{
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:
+    radial-gradient(circle at 70% 24%,rgba(247,222,120,.72) 0 52px,transparent 53px),
+    linear-gradient(140deg,#d8c5ef,#a8dce8);
+}
+.portrait-placeholder--brand img{
+  width:94%;
+  height:auto;
+  position:relative;
+  z-index:2;
+  filter:drop-shadow(0 22px 30px rgba(22,48,71,.12));
+}
+.portrait-placeholder--brand .portrait-placeholder__label{
+  color:var(--ink);
+  opacity:.5;
+}
+
+@media (max-width:1100px){
+  .header__inner{gap:18px}
+  .nav{gap:15px}
+  .brand__owner{display:none}
+}
+@media (max-width:980px){
+  .brand__owner{display:block}
+}
+@media (max-width:680px){
+  .brand__logo{width:42px;height:42px}
+  .brand--identity .brand__text{font-size:18px}
+  .brand__owner{display:none}
+  .hero__brandline{font-size:27px}
+  .hero__name{font-size:54px}
+  .hero__role{font-size:21px}
+  .hero__visual--logo{min-height:auto}
+  .brand-showcase{min-height:420px;border-radius:30px}
+  .brand-showcase__caption{
+    left:14px;right:14px;bottom:14px;
+    flex-direction:column;align-items:flex-start;gap:3px;
+  }
+  .page-signature{padding-top:20px;margin-bottom:-18px}
+  .page-signature img{width:40px;height:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  .brand-showcase__logo{animation:none}
+}
+
+
+/* ==========================================
+   PREMIUM PERSONAL HOMEPAGE
+   ========================================== */
+.personal-home{overflow:hidden}
+.personal-hero{position:relative;padding:58px 0 0}
+.personal-hero::before{
+  content:"gastrolivet";position:absolute;top:34px;right:-18px;z-index:-1;
+  font-size:clamp(100px,17vw,250px);line-height:.8;font-weight:800;letter-spacing:-.09em;
+  color:rgba(22,48,71,.035);pointer-events:none
+}
+.personal-hero__top{
+  display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;min-height:620px
+}
+.personal-kicker{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:28px;
+  text-transform:uppercase;letter-spacing:.12em;font-size:10px;font-weight:850
+}
+.personal-kicker span:first-child{color:#59c83c}
+.personal-kicker i{width:32px;height:1px;background:var(--ink);opacity:.35}
+.personal-name{
+  margin:0;max-width:760px;font-size:clamp(68px,8.6vw,124px);line-height:.82;letter-spacing:-.078em
+}
+.personal-role{
+  margin:28px 0 0;font-size:clamp(21px,2.35vw,32px);line-height:1.16;letter-spacing:-.04em
+}
+.personal-role strong{color:var(--coral);font-weight:800}
+.personal-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.personal-hero__visual{
+  position:relative;min-height:550px;display:flex;align-items:center;justify-content:center
+}
+.personal-logo-card{
+  position:relative;width:min(100%,520px);min-height:525px;display:grid;place-items:center;overflow:hidden;
+  border-radius:48px;border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 82% 15%,rgba(247,222,120,.8) 0 60px,transparent 61px),
+    radial-gradient(circle at 9% 82%,rgba(216,197,239,.6) 0 95px,transparent 96px),
+    rgba(255,255,255,.55);
+  box-shadow:var(--shadow)
+}
+.personal-logo-card::before{
+  content:"";position:absolute;width:340px;height:340px;border-radius:50%;
+  border:52px solid rgba(80,163,255,.08);right:-125px;top:85px
+}
+.personal-logo-card__label{
+  position:absolute;top:25px;left:27px;font-size:13px;font-weight:850;color:#59c83c;letter-spacing:-.025em
+}
+.personal-logo-card img{
+  position:relative;z-index:2;width:92%;max-width:480px;
+  filter:drop-shadow(0 22px 32px rgba(22,48,71,.12));
+  animation:personalLogoFloat 6.4s ease-in-out infinite
+}
+.personal-logo-card__meta{
+  position:absolute;left:22px;right:22px;bottom:20px;display:flex;justify-content:space-between;gap:10px
+}
+.personal-logo-card__meta span{
+  display:inline-flex;padding:8px 10px;border:1px solid rgba(22,48,71,.09);border-radius:999px;
+  background:rgba(255,253,248,.78);backdrop-filter:blur(8px);font-size:9px;font-weight:800
+}
+.personal-sticker{
+  position:absolute;z-index:5;padding:10px 13px;border-radius:999px;border:1px solid rgba(22,48,71,.12);
+  box-shadow:0 12px 30px rgba(22,48,71,.09);font-size:10px;font-weight:850
+}
+.personal-sticker--one{right:-10px;top:82px;background:var(--yellow);transform:rotate(7deg)}
+.personal-sticker--two{left:-20px;bottom:86px;background:var(--lavender);transform:rotate(-8deg)}
+@keyframes personalLogoFloat{
+  0%,100%{transform:translateY(0) rotate(-.3deg)}
+  50%{transform:translateY(-9px) rotate(.45deg)}
+}
+
+.personal-statement{margin-top:8px;padding:54px 0 62px;border-top:1px solid var(--line)}
+.personal-statement__index{
+  margin-bottom:20px;font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.12em;opacity:.5
+}
+.personal-statement h2{
+  margin:0;max-width:1120px;font-size:clamp(54px,7vw,104px);line-height:.88;letter-spacing:-.073em
+}
+.personal-statement h2 em{position:relative;color:var(--coral);font-style:normal}
+.personal-statement h2 em::after{
+  content:"";position:absolute;left:1%;right:-1%;bottom:2px;height:10px;z-index:-1;
+  background:var(--yellow);transform:rotate(-1deg)
+}
+.personal-statement__bottom{
+  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-top:32px
+}
+.personal-statement__bottom p{
+  margin:0;max-width:660px;font-size:14px;color:var(--ink-2);opacity:.74
+}
+.personal-arrow-link{
+  display:inline-flex;gap:16px;align-items:center;padding-bottom:5px;border-bottom:1px solid var(--ink);
+  font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:.08em
+}
+
+.personal-expertise{padding:82px 0;background:var(--ink);color:white}
+.personal-section-head{margin-bottom:35px}
+.personal-section-head>span,.personal-section-head>div>span{
+  font-size:9px;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:var(--coral)
+}
+.personal-section-head h2{
+  margin:9px 0 0;max-width:780px;font-size:clamp(42px,5vw,70px);line-height:.96;letter-spacing:-.06em
+}
+.personal-section-head--row{display:flex;align-items:flex-end;justify-content:space-between;gap:35px}
+.personal-section-head--row p{width:min(380px,100%);margin:0;font-size:12px;opacity:.65}
+.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.expertise-card{
+  min-height:330px;padding:22px;border-radius:28px;border:1px solid rgba(255,255,255,.08);
+  display:flex;flex-direction:column;justify-content:space-between;color:var(--ink);transition:.25s ease
+}
+.expertise-card:hover{transform:translateY(-6px)}
+.expertise-card--therapy{background:var(--lavender)}
+.expertise-card--gastro{background:var(--coral-soft)}
+.expertise-card--diet{background:var(--yellow)}
+.expertise-card__top{display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:850}
+.expertise-card__top i{
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,255,255,.5);font-style:normal;font-size:18px
+}
+.expertise-card h3{margin:0 0 10px;font-size:32px;line-height:1;letter-spacing:-.05em}
+.expertise-card p{margin:0;max-width:320px;font-size:11px;opacity:.68}
+
+.personal-navigation{padding:92px 0}
+.personal-nav-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.personal-nav-card{
+  min-height:270px;padding:22px;border:1px solid var(--line);border-radius:27px;background:rgba(255,255,255,.5);
+  display:flex;flex-direction:column;transition:.25s ease
+}
+.personal-nav-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.personal-nav-card--accent{background:var(--sky)}
+.personal-nav-card--dark{background:var(--ink);color:white}
+.personal-nav-card--soft{background:#fff9ed}
+.personal-nav-card__num{font-size:10px;font-weight:850;opacity:.55}
+.personal-nav-card h3{margin:44px 0 8px;font-size:28px;line-height:1;letter-spacing:-.045em}
+.personal-nav-card p{margin:0;font-size:11px;opacity:.65}
+.personal-nav-card b{
+  margin-top:auto;padding-top:18px;border-top:1px solid currentColor;font-size:10px;opacity:.75
+}
+
+.personal-contact{padding:0 0 86px}
+.personal-contact__box{
+  display:grid;grid-template-columns:.48fr 1.2fr auto;gap:36px;align-items:center;min-height:330px;
+  padding:38px 42px;border-radius:38px;border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 14% 80%,rgba(168,220,232,.58) 0 115px,transparent 116px),
+    linear-gradient(135deg,var(--lavender),#f5eee5)
+}
+.personal-contact__logo{display:grid;place-items:center}
+.personal-contact__logo img{
+  width:230px;max-width:100%;filter:drop-shadow(0 18px 28px rgba(22,48,71,.1))
+}
+.personal-contact__copy>span{
+  font-size:9px;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:var(--coral)
+}
+.personal-contact__copy h2{
+  margin:10px 0 14px;font-size:clamp(38px,4.6vw,64px);line-height:.93;letter-spacing:-.06em
+}
+.personal-contact__copy p{max-width:610px;margin:0;font-size:12px;opacity:.66}
+
+@media (max-width:1050px){
+  .personal-hero__top{grid-template-columns:1fr}
+  .personal-hero__visual{min-height:auto}
+  .personal-logo-card{min-height:500px}
+  .personal-nav-grid{grid-template-columns:repeat(2,1fr)}
+  .personal-contact__box{grid-template-columns:.5fr 1fr}
+  .personal-contact__action{grid-column:2}
+}
+@media (max-width:760px){
+  .personal-hero{padding-top:38px}
+  .personal-hero__top{min-height:auto}
+  .personal-name{font-size:58px}
+  .personal-role{font-size:21px}
+  .personal-logo-card{min-height:390px;border-radius:30px}
+  .personal-logo-card__meta{flex-direction:column;align-items:flex-start}
+  .personal-sticker--one{right:-4px}
+  .personal-sticker--two{left:-4px;bottom:50px}
+  .personal-statement{padding:44px 0 50px}
+  .personal-statement h2{font-size:50px}
+  .personal-statement__bottom{grid-template-columns:1fr}
+  .personal-arrow-link{width:max-content}
+  .expertise-grid{grid-template-columns:1fr}
+  .expertise-card{min-height:245px}
+  .personal-section-head--row{display:block}
+  .personal-section-head--row p{margin-top:16px}
+  .personal-nav-grid{grid-template-columns:1fr}
+  .personal-nav-card{min-height:220px}
+  .personal-contact__box{grid-template-columns:1fr;padding:30px 24px;border-radius:30px}
+  .personal-contact__logo{justify-content:start}
+  .personal-contact__logo img{width:180px}
+  .personal-contact__action{grid-column:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  .personal-logo-card img{animation:none}
+}
+
+
+/* ==========================================
+   CAT PAW CURSOR TRAIL — delicate
+   ========================================== */
+.paw-trail{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.78) rotate(0deg);
+  animation: pawTrailFade 1.9s cubic-bezier(.22,.7,.25,1) forwards;
+  filter: blur(.1px) drop-shadow(0 5px 10px rgba(22,48,71,.045));
+}
+.paw-trail svg{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.paw-trail path,
+.paw-trail ellipse,
+.paw-trail circle{
+  fill: rgba(22,48,71,.075);
+}
+@keyframes pawTrailFade{
+  0%{
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.78) rotate(var(--paw-rotate, 0deg));
+  }
+  14%{
+    opacity: .42;
+  }
+  55%{
+    opacity: .19;
+  }
+  100%{
+    opacity: 0;
+    transform: translate(-50%, -54%) scale(.96) rotate(var(--paw-rotate, 0deg));
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .paw-trail{ display:none !important; }
+}

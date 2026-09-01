@@ -146,3 +146,55 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     stackCards.forEach(card => card.style.translate = '');
   });
 }
+
+
+/* Cat paw cursor trail */
+(function(){
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+  if (reducedMotion || !isFinePointer) return;
+
+  const pawSvg = `
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <ellipse cx="32" cy="39" rx="14" ry="11"></ellipse>
+      <ellipse cx="18" cy="22" rx="5.5" ry="8"></ellipse>
+      <ellipse cx="29" cy="15" rx="5.5" ry="8"></ellipse>
+      <ellipse cx="41" cy="15" rx="5.5" ry="8"></ellipse>
+      <ellipse cx="52" cy="22" rx="5.5" ry="8"></ellipse>
+    </svg>`;
+
+  let lastTime = 0;
+  let lastX = 0;
+  let lastY = 0;
+  let flip = false;
+
+  function spawnPaw(x, y) {
+    const paw = document.createElement('span');
+    paw.className = 'paw-trail';
+    const size = 15 + Math.random() * 7;
+    const angle = flip ? -13 : 13;
+    paw.style.width = `${size}px`;
+    paw.style.height = `${size}px`;
+    paw.style.left = `${x}px`;
+    paw.style.top = `${y}px`;
+    paw.style.setProperty('--paw-rotate', `${angle + (Math.random() * 6 - 3)}deg`);
+    paw.innerHTML = pawSvg;
+    document.body.appendChild(paw);
+    flip = !flip;
+    window.setTimeout(() => paw.remove(), 1950);
+  }
+
+  window.addEventListener('pointermove', (event) => {
+    const now = performance.now();
+    const dx = event.clientX - lastX;
+    const dy = event.clientY - lastY;
+    const distance = Math.hypot(dx, dy);
+
+    if (now - lastTime < 145 || distance < 52) return;
+
+    spawnPaw(event.clientX - 4, event.clientY + 2);
+    lastTime = now;
+    lastX = event.clientX;
+    lastY = event.clientY;
+  }, { passive: true });
+})();

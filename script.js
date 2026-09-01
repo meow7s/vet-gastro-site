@@ -22,7 +22,6 @@ document.querySelectorAll('.faq-list details').forEach(item => {
   });
 });
 
-
 const certLightbox = document.getElementById('certLightbox');
 const certLightboxImage = document.getElementById('certLightboxImage');
 const certLightboxTitle = document.getElementById('certLightboxTitle');
@@ -37,7 +36,7 @@ function closeCertificateLightbox() {
   if (certLightboxImage) certLightboxImage.src = '';
 }
 
-document.querySelectorAll('.certificate-item').forEach(card => {
+document.querySelectorAll('.certificate-item, .feature-cert').forEach(card => {
   card.addEventListener('click', () => {
     if (!certLightbox) return;
     certLightboxImage.src = card.dataset.image || '';

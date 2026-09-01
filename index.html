@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Винс Михаил Сергеевич — ветеринарный врач-терапевт, гастроэнтеролог и диетолог. gastrolivet: гастроэнтерология и диетология собак и кошек." />
   <title>gastrolivet — Винс Михаил Сергеевич | Ветеринарный гастроэнтеролог и диетолог</title>
-  <link rel="icon" type="image/svg+xml" href="assets/gastrolivet-mark.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/gastrolivet-logo.webp" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,7 +15,7 @@
     <header class="header">
       <div class="container header__inner">
         <a class="brand brand--identity" href="index.html" aria-label="gastrolivet — главная">
-          <img class="brand__logo" src="assets/gastrolivet-mark.svg" alt="" aria-hidden="true">
+          <img class="brand__logo" src="assets/gastrolivet-logo.webp" alt="" aria-hidden="true">
           <span class="brand__identity">
             <span class="brand__text">gastrolivet</span>
             <span class="brand__owner">Винс Михаил Сергеевич</span>
@@ -68,14 +68,43 @@
       </div>
 
       <div class="personal-hero__visual">
-        <div class="personal-logo-card">
-          <div class="personal-logo-card__label">gastrolivet</div>
-          <img src="assets/gastrolivet-mark.svg" alt="Логотип gastrolivet">
-          <div class="personal-logo-card__meta">
-            <span>собаки + кошки</span>
-            <span>онлайн-консультации</span>
+        <div class="doctor-photo-card is-placeholder">
+          <div class="doctor-photo-card__top">
+            <span>Винс Михаил Сергеевич</span>
+            <i>gastrolivet</i>
+          </div>
+
+          <div class="doctor-photo-card__media">
+            <!--
+              Чтобы вставить фото позже:
+              1) положите файл assets/profile-photo.webp
+              2) удалите класс "is-placeholder" у doctor-photo-card
+            -->
+            <img class="doctor-photo-card__image"
+                 src="assets/profile-photo.webp"
+                 alt="Винс Михаил Сергеевич"
+                 onerror="this.style.display='none'; this.closest('.doctor-photo-card').classList.add('is-placeholder')">
+
+            <div class="doctor-photo-placeholder" aria-hidden="true">
+              <div class="doctor-photo-placeholder__head"></div>
+              <div class="doctor-photo-placeholder__body"></div>
+              <span>место для фотографии</span>
+            </div>
+
+            <div class="doctor-photo-card__shape doctor-photo-card__shape--blue"></div>
+            <div class="doctor-photo-card__shape doctor-photo-card__shape--green"></div>
+            <div class="doctor-photo-card__shape doctor-photo-card__shape--yellow"></div>
+          </div>
+
+          <div class="doctor-photo-card__bottom">
+            <div>
+              <b>Ветеринарный врач</b>
+              <span>терапевт · гастроэнтеролог · диетолог</span>
+            </div>
+            <span class="doctor-photo-card__badge">онлайн</span>
           </div>
         </div>
+
         <span class="personal-sticker personal-sticker--one">evidence-based</span>
         <span class="personal-sticker personal-sticker--two">ЖКТ + питание</span>
       </div>
@@ -96,6 +125,20 @@
       </div>
     </div>
   </section>
+
+
+  <div class="site-marquee" aria-hidden="true">
+    <div class="site-marquee__track">
+      <span>ГАСТРОЭНТЕРОЛОГИЯ</span><i>✦</i>
+      <span>ДИЕТОЛОГИЯ</span><i>✦</i>
+      <span>ТЕРАПИЯ</span><i>✦</i>
+      <span>СОБАКИ + КОШКИ</span><i>✦</i>
+      <span>EVIDENCE-BASED</span><i>✦</i>
+      <span>ГАСТРОЭНТЕРОЛОГИЯ</span><i>✦</i>
+      <span>ДИЕТОЛОГИЯ</span><i>✦</i>
+      <span>ТЕРАПИЯ</span><i>✦</i>
+    </div>
+  </div>
 
   <section class="personal-expertise">
     <div class="container">
@@ -186,7 +229,7 @@
   <section class="personal-contact">
     <div class="container personal-contact__box">
       <div class="personal-contact__logo">
-        <img src="assets/gastrolivet-mark.svg" alt="">
+        <img src="assets/gastrolivet-logo.webp" alt="">
       </div>
       <div class="personal-contact__copy">
         <span>04 / contact</span>
@@ -209,7 +252,7 @@
       <div class="container footer__inner">
         <div>
           <a class="brand brand--footer brand--identity" href="index.html">
-            <img class="brand__logo" src="assets/gastrolivet-mark.svg" alt="" aria-hidden="true">
+            <img class="brand__logo" src="assets/gastrolivet-logo.webp" alt="" aria-hidden="true">
             <span class="brand__identity">
               <span class="brand__text">gastrolivet</span>
               <span class="brand__owner">Винс Михаил Сергеевич</span>

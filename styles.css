@@ -1081,8 +1081,8 @@ body.lightbox-open{overflow:hidden}
   min-width:max-content;
 }
 .brand__logo{
-  width:46px;
-  height:46px;
+  width:56px;
+  height:56px;
   object-fit:contain;
   flex:0 0 auto;
 }
@@ -1108,8 +1108,8 @@ body.lightbox-open{overflow:hidden}
   opacity:.72;
 }
 .brand--footer .brand__logo{
-  width:64px;
-  height:64px;
+  width:72px;
+  height:72px;
 }
 .brand--footer .brand__text{font-size:23px}
 .brand--footer .brand__owner{font-size:10px}
@@ -1295,7 +1295,7 @@ body.lightbox-open{overflow:hidden}
   .brand__owner{display:block}
 }
 @media (max-width:680px){
-  .brand__logo{width:42px;height:42px}
+  .brand__logo{width:50px;height:50px}
   .brand--identity .brand__text{font-size:18px}
   .brand__owner{display:none}
   .hero__brandline{font-size:27px}
@@ -1423,7 +1423,7 @@ body.lightbox-open{overflow:hidden}
 .personal-expertise{padding:82px 0;background:var(--ink);color:white}
 .personal-section-head{margin-bottom:35px}
 .personal-section-head>span,.personal-section-head>div>span{
-  font-size:9px;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:var(--coral)
+  font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:var(--coral)
 }
 .personal-section-head h2{
   margin:9px 0 0;max-width:780px;font-size:clamp(42px,5vw,70px);line-height:.96;letter-spacing:-.06em
@@ -1432,8 +1432,8 @@ body.lightbox-open{overflow:hidden}
 .personal-section-head--row p{width:min(380px,100%);margin:0;font-size:12px;opacity:.65}
 .expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
 .expertise-card{
-  min-height:330px;padding:22px;border-radius:28px;border:1px solid rgba(255,255,255,.08);
-  display:flex;flex-direction:column;justify-content:space-between;color:var(--ink);transition:.25s ease
+  min-height:250px;padding:22px;border-radius:28px;border:1px solid rgba(255,255,255,.08);
+  display:flex;flex-direction:column;justify-content:flex-end;color:var(--ink);transition:.25s ease
 }
 .expertise-card:hover{transform:translateY(-6px)}
 .expertise-card--therapy{background:var(--lavender)}
@@ -1444,7 +1444,7 @@ body.lightbox-open{overflow:hidden}
   width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
   background:rgba(255,255,255,.5);font-style:normal;font-size:18px
 }
-.expertise-card h3{margin:0 0 10px;font-size:32px;line-height:1;letter-spacing:-.05em}
+.expertise-card h3{margin:0 0 8px;font-size:32px;line-height:1;letter-spacing:-.05em}
 .expertise-card p{margin:0;max-width:320px;font-size:11px;opacity:.68}
 
 .personal-navigation{padding:92px 0}
@@ -1508,7 +1508,7 @@ body.lightbox-open{overflow:hidden}
   .personal-statement__bottom{grid-template-columns:1fr}
   .personal-arrow-link{width:max-content}
   .expertise-grid{grid-template-columns:1fr}
-  .expertise-card{min-height:245px}
+  .expertise-card{min-height:210px}
   .personal-section-head--row{display:block}
   .personal-section-head--row p{margin-top:16px}
   .personal-nav-grid{grid-template-columns:1fr}
@@ -1569,4 +1569,656 @@ body.lightbox-open{overflow:hidden}
 /* refined minimal logo variant */
 .personal-logo-card__label{
   letter-spacing:-.015em;
+}
+
+
+/* hero photo placeholder */
+.personal-photo-card{
+  position:relative;
+  width:min(100%,520px);
+  min-height:525px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-radius:48px;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 82% 15%,rgba(247,222,120,.8) 0 60px,transparent 61px),
+    radial-gradient(circle at 9% 82%,rgba(216,197,239,.45) 0 95px,transparent 96px),
+    linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.48));
+  box-shadow:var(--shadow);
+}
+.personal-photo-card::before{
+  content:"";
+  position:absolute;
+  width:340px;
+  height:340px;
+  border-radius:50%;
+  border:52px solid rgba(80,163,255,.08);
+  right:-125px;
+  top:85px;
+}
+.personal-photo-card__label{
+  position:absolute;
+  top:25px;
+  left:27px;
+  font-size:13px;
+  font-weight:850;
+  color:#59c83c;
+  letter-spacing:-.025em;
+}
+.personal-photo-card__meta{
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:20px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+.personal-photo-card__meta span{
+  display:inline-flex;
+  padding:8px 10px;
+  border:1px solid rgba(22,48,71,.09);
+  border-radius:999px;
+  background:rgba(255,253,248,.78);
+  backdrop-filter:blur(8px);
+  font-size:9px;
+  font-weight:800;
+}
+.photo-placeholder{
+  position:relative;
+  z-index:2;
+  width:min(82%,390px);
+  aspect-ratio: 4 / 5;
+  border-radius:38px;
+  border:3px solid rgba(22,48,71,.12);
+  background:linear-gradient(180deg, rgba(246,242,234,.98), rgba(236,231,220,.95));
+  box-shadow:0 20px 40px rgba(22,48,71,.1);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.photo-placeholder__ring{
+  position:absolute;
+  width:210px;
+  height:210px;
+  border-radius:50%;
+  background:rgba(124,191,255,.22);
+  top:58px;
+}
+.photo-placeholder__avatar{
+  position:relative;
+  width:132px;
+  height:132px;
+  border-radius:50%;
+  background:linear-gradient(180deg,#7ab1ec,#609ee2);
+  box-shadow:0 10px 20px rgba(22,48,71,.08);
+}
+.photo-placeholder__avatar::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-94px;
+  transform:translateX(-50%);
+  width:225px;
+  height:170px;
+  border-radius:110px 110px 28px 28px;
+  background:linear-gradient(180deg,#75c84d,#66bf42);
+}
+.photo-placeholder__text{
+  position:relative;
+  z-index:2;
+  margin-top:120px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.photo-placeholder__text span{
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  opacity:.45;
+}
+.photo-placeholder__text strong{
+  font-size:24px;
+  line-height:1;
+  letter-spacing:-.05em;
+}
+@media (max-width:760px){
+  .personal-photo-card{min-height:390px;border-radius:30px}
+  .personal-photo-card__meta{flex-direction:column;align-items:flex-start}
+  .photo-placeholder{width:min(84%,290px);border-radius:28px}
+  .photo-placeholder__ring{width:150px;height:150px;top:38px}
+  .photo-placeholder__avatar{width:98px;height:98px}
+  .photo-placeholder__avatar::before{width:170px;height:125px;bottom:-70px}
+  .photo-placeholder__text{margin-top:92px}
+  .photo-placeholder__text strong{font-size:20px}
+}
+
+
+/* ==========================================
+   PHOTO-READY DOCTOR CARD
+   ========================================== */
+.doctor-photo-card{
+  position:relative;
+  width:min(100%,520px);
+  min-height:545px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border-radius:48px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.62);
+  box-shadow:0 22px 60px rgba(22,48,71,.10);
+}
+.doctor-photo-card__top{
+  position:relative;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:20px 22px 10px;
+}
+.doctor-photo-card__top span{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:-.015em;
+}
+.doctor-photo-card__top i{
+  font-style:normal;
+  font-size:11px;
+  font-weight:850;
+  color:#59c83c;
+}
+.doctor-photo-card__media{
+  position:relative;
+  flex:1;
+  min-height:420px;
+  margin:0 18px;
+  overflow:hidden;
+  border-radius:34px;
+  background:
+    linear-gradient(180deg,rgba(252,249,242,.88),rgba(238,234,225,.96));
+}
+.doctor-photo-card__media::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(circle at 78% 17%,rgba(247,222,120,.85) 0 56px,transparent 57px),
+    radial-gradient(circle at 18% 82%,rgba(216,197,239,.56) 0 95px,transparent 96px);
+}
+.doctor-photo-card__image{
+  position:absolute;
+  z-index:3;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 14%;
+  display:block;
+}
+.doctor-photo-card__shape{
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+}
+.doctor-photo-card__shape--blue{
+  width:245px;
+  height:245px;
+  right:-58px;
+  top:76px;
+  border-radius:47% 53% 58% 42% / 40% 44% 56% 60%;
+  background:rgba(93,162,235,.17);
+  transform:rotate(18deg);
+}
+.doctor-photo-card__shape--green{
+  width:200px;
+  height:150px;
+  left:-36px;
+  bottom:20px;
+  border-radius:58% 42% 48% 52% / 62% 44% 56% 38%;
+  background:rgba(89,200,60,.15);
+  transform:rotate(-10deg);
+}
+.doctor-photo-card__shape--yellow{
+  width:82px;
+  height:82px;
+  right:24px;
+  top:22px;
+  border-radius:50%;
+  background:rgba(247,222,120,.72);
+}
+.doctor-photo-placeholder{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  top:50%;
+  width:250px;
+  height:315px;
+  transform:translate(-50%,-46%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  opacity:.38;
+}
+.doctor-photo-placeholder__head{
+  width:104px;
+  height:104px;
+  border-radius:50%;
+  background:var(--ink);
+}
+.doctor-photo-placeholder__body{
+  width:210px;
+  height:150px;
+  margin-top:13px;
+  border-radius:105px 105px 28px 28px;
+  background:var(--ink);
+}
+.doctor-photo-placeholder span{
+  margin-top:20px;
+  font-size:9px;
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+}
+.doctor-photo-card:not(.is-placeholder) .doctor-photo-placeholder{
+  display:none;
+}
+.doctor-photo-card__bottom{
+  position:relative;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:15px 22px 20px;
+}
+.doctor-photo-card__bottom div{
+  display:flex;
+  flex-direction:column;
+}
+.doctor-photo-card__bottom b{
+  font-size:11px;
+  line-height:1.1;
+}
+.doctor-photo-card__bottom span{
+  margin-top:4px;
+  font-size:9px;
+  opacity:.6;
+}
+.doctor-photo-card__badge{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  margin:0!important;
+  padding:8px 10px;
+  border-radius:999px;
+  background:var(--yellow);
+  opacity:1!important;
+  font-size:9px!important;
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+@media (max-width:760px){
+  .doctor-photo-card{
+    min-height:420px;
+    border-radius:30px;
+  }
+  .doctor-photo-card__media{
+    min-height:310px;
+    margin:0 12px;
+    border-radius:25px;
+  }
+  .doctor-photo-card__top{
+    padding:15px 15px 8px;
+  }
+  .doctor-photo-card__bottom{
+    padding:12px 15px 15px;
+  }
+  .doctor-photo-placeholder{
+    width:190px;
+    height:245px;
+  }
+  .doctor-photo-placeholder__head{
+    width:78px;
+    height:78px;
+  }
+  .doctor-photo-placeholder__body{
+    width:158px;
+    height:112px;
+  }
+}
+
+
+/* =========================================================
+   COMPLETE MOTION SYSTEM — gastrolivet
+   ========================================================= */
+
+/* 1. Smooth page transitions */
+.page-transition{
+  position:fixed;
+  inset:0;
+  z-index:100000;
+  pointer-events:none;
+  background:var(--bg);
+  opacity:1;
+  transform:scaleY(1);
+  transform-origin:top;
+  transition:opacity .46s cubic-bezier(.22,.7,.25,1), transform .52s cubic-bezier(.22,.7,.25,1);
+}
+.page-transition.is-ready{
+  opacity:0;
+  transform:scaleY(.985);
+}
+.page-transition.is-leaving{
+  opacity:1;
+  transform:scaleY(1);
+  pointer-events:all;
+}
+
+/* 2. Scroll reveal */
+.motion-reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:
+    opacity .78s ease,
+    transform .88s cubic-bezier(.18,.82,.25,1);
+  transition-delay:var(--motion-delay,0ms);
+  will-change:transform,opacity;
+}
+.motion-reveal.motion-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* 3. Large-title masked entrance */
+.title-mask-line{
+  display:block;
+  overflow:hidden;
+  padding-bottom:.04em;
+  margin-bottom:-.04em;
+}
+.title-mask-line > span{
+  display:block;
+  transform:translateY(112%);
+  opacity:.15;
+  transition:
+    transform .9s cubic-bezier(.16,.84,.24,1),
+    opacity .72s ease;
+}
+.title-mask-line:nth-child(2) > span{transition-delay:90ms}
+.title-mask-line:nth-child(3) > span{transition-delay:170ms}
+.title-mask-line:nth-child(4) > span{transition-delay:240ms}
+.title-mask-ready .title-mask-line > span{
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* 4. Photo / visual reveal */
+.photo-mask-reveal{
+  clip-path:inset(0 0 100% 0 round 48px);
+  opacity:.35;
+  transform:translateY(14px) scale(.985);
+  transition:
+    clip-path 1.05s cubic-bezier(.16,.84,.24,1),
+    opacity .8s ease,
+    transform 1s cubic-bezier(.16,.84,.24,1);
+}
+.photo-mask-reveal.photo-mask-visible{
+  clip-path:inset(0 0 0 0 round 48px);
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+/* 5. Slow decorative parallax elements */
+.parallax-item{
+  will-change:translate;
+  transition:translate .18s ease-out;
+}
+
+/* 6. Magnetic buttons */
+.magnetic{
+  will-change:translate;
+  transition:translate .18s cubic-bezier(.2,.8,.2,1), box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+.magnetic:hover{
+  box-shadow:0 12px 28px rgba(22,48,71,.10);
+}
+
+/* 7. Arrow motion */
+.btn span,
+.personal-arrow-link span,
+.expertise-card__top i,
+.service-card__top span:last-child,
+.timeline-item i,
+.case-open,
+.personal-nav-card b,
+.shortcut-card b{
+  transition:transform .28s cubic-bezier(.2,.8,.2,1), translate .28s cubic-bezier(.2,.8,.2,1), opacity .2s ease;
+}
+.btn:hover span,
+.personal-arrow-link:hover span{
+  transform:translate(4px,-4px);
+}
+.expertise-card:hover .expertise-card__top i,
+.service-card:hover .service-card__top span:last-child{
+  transform:translate(3px,-3px) rotate(7deg);
+}
+.personal-nav-card:hover b,
+.shortcut-card:hover b{
+  translate:4px 0;
+}
+
+/* 8. Cards: lift, saturation, subtle light sweep */
+.expertise-card,
+.personal-nav-card,
+.service-card,
+.review,
+.step,
+.shortcut-card,
+.contact-bubble{
+  position:relative;
+  overflow:hidden;
+}
+.expertise-card::after,
+.personal-nav-card::after,
+.service-card::after{
+  content:"";
+  position:absolute;
+  inset:-35% auto -35% -80%;
+  width:34%;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.24),transparent);
+  transform:skewX(-18deg);
+  opacity:0;
+}
+.expertise-card:hover,
+.personal-nav-card:hover,
+.service-card:hover{
+  filter:saturate(1.06);
+}
+.expertise-card:hover::after,
+.personal-nav-card:hover::after,
+.service-card:hover::after{
+  animation:cardSweep .85s ease;
+}
+@keyframes cardSweep{
+  0%{left:-80%;opacity:0}
+  18%{opacity:.8}
+  100%{left:130%;opacity:0}
+}
+
+/* 9. Certificate stack fans out on hover */
+.portfolio-stack:hover .portfolio-stack__card{
+  animation:none!important;
+  transition:transform .55s cubic-bezier(.16,.84,.24,1), box-shadow .3s ease;
+}
+.portfolio-stack:hover .portfolio-stack__card--1{
+  transform:translate(-34px,8px) rotate(-13deg) scale(1.015);
+}
+.portfolio-stack:hover .portfolio-stack__card--2{
+  transform:translate(30px,-12px) rotate(13deg) scale(1.01);
+}
+.portfolio-stack:hover .portfolio-stack__card--3{
+  transform:translate(20px,22px) rotate(7deg) scale(1.025);
+}
+
+/* 10. Count-up numbers */
+.motion-counter{
+  font-variant-numeric:tabular-nums;
+  display:inline-block;
+  min-width:1.1ch;
+}
+
+/* 11. Timeline draw */
+.timeline-year{
+  position:relative;
+  border-top:0!important;
+}
+.timeline-year::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:2px;
+  background:var(--ink);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 1s cubic-bezier(.16,.84,.24,1) .12s;
+}
+.timeline-year.timeline-line-visible::before{
+  transform:scaleX(1);
+}
+.timeline-item{
+  transition:padding-left .25s ease, background .25s ease;
+}
+.timeline-item:hover{
+  padding-left:8px;
+  background:rgba(255,255,255,.28);
+}
+
+/* 12. Marquee */
+.site-marquee{
+  overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  background:var(--ink);
+  color:white;
+}
+.site-marquee__track{
+  width:max-content;
+  display:flex;
+  align-items:center;
+  gap:25px;
+  padding:15px 0;
+  font-size:10px;
+  line-height:1;
+  font-weight:850;
+  letter-spacing:.13em;
+  animation:siteMarquee 25s linear infinite;
+}
+.site-marquee__track span{white-space:nowrap}
+.site-marquee__track i{font-style:normal;color:var(--coral)}
+.site-marquee:hover .site-marquee__track{animation-play-state:paused}
+@keyframes siteMarquee{to{transform:translateX(-50%)}}
+
+/* 13. Header compacts on scroll */
+.header,
+.header__inner,
+.header .brand__logo,
+.header .brand__text,
+.header .brand__owner,
+.header__cta{
+  transition:
+    height .3s ease,
+    padding .3s ease,
+    width .3s ease,
+    font-size .3s ease,
+    opacity .3s ease,
+    background .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+.header.is-scrolled{
+  background:rgba(245,240,230,.90);
+  box-shadow:0 10px 34px rgba(22,48,71,.075);
+  border-bottom-color:rgba(22,48,71,.08);
+}
+.header.is-scrolled .header__inner{height:64px}
+.header.is-scrolled .brand__logo{width:46px;height:46px}
+.header.is-scrolled .brand__text{font-size:18px}
+.header.is-scrolled .brand__owner{opacity:.48}
+.header.is-scrolled .header__cta{padding:8px 15px}
+
+/* 14. Hero introduction details */
+.personal-kicker,
+.personal-role,
+.personal-actions{
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity .7s ease, transform .78s cubic-bezier(.2,.8,.2,1);
+}
+.hero-intro-ready .personal-kicker{opacity:1;transform:none;transition-delay:100ms}
+.hero-intro-ready .personal-role{opacity:1;transform:none;transition-delay:300ms}
+.hero-intro-ready .personal-actions{opacity:1;transform:none;transition-delay:430ms}
+
+/* 15. Gentle background drift */
+.page-noise{
+  animation:noiseDrift 18s linear infinite alternate;
+}
+@keyframes noiseDrift{
+  from{background-position:0 0}
+  to{background-position:12px 8px}
+}
+
+/* 16. Smooth FAQ interaction */
+.faq-list details p{
+  animation:faqOpen .34s ease both;
+}
+@keyframes faqOpen{
+  from{opacity:0;transform:translateY(-6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Reduced-motion: preserve usability and disable decorative motion */
+@media (prefers-reduced-motion:reduce){
+  .page-transition{display:none!important}
+  .motion-reveal,
+  .title-mask-line > span,
+  .photo-mask-reveal,
+  .personal-kicker,
+  .personal-role,
+  .personal-actions{
+    opacity:1!important;
+    transform:none!important;
+    clip-path:none!important;
+    transition:none!important;
+  }
+  .site-marquee__track,
+  .portfolio-marquee__track,
+  .page-noise{
+    animation:none!important;
+  }
+  .parallax-item,
+  .magnetic{
+    translate:none!important;
+    transition:none!important;
+  }
+}
+
+@media (max-width:760px){
+  .header.is-scrolled .header__inner{height:58px}
+  .photo-mask-reveal{clip-path:inset(0 0 100% 0 round 30px)}
+  .site-marquee__track{padding:13px 0;font-size:9px;gap:20px}
 }

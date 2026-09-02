@@ -4298,3 +4298,56 @@ body > .footer{
     width:min(100%,280px);
   }
 }
+
+
+/* ==========================================
+   ACHIEVEMENTS — remove small numbering labels
+   ========================================== */
+.page-achievements .portfolio-index{
+  display:none !important;
+}
+
+.page-achievements .portfolio-overview__top{
+  grid-template-columns: 1fr minmax(280px, 420px) !important;
+  align-items:end;
+  gap:20px 28px;
+}
+
+.page-achievements .portfolio-overview__top > div:first-child:has(+ div){
+  display:none !important;
+}
+
+/* fallback if :has is unsupported — keep layout stable even if first child hidden */
+.page-achievements .portfolio-overview__top > div:nth-child(2){
+  grid-column:1;
+}
+.page-achievements .portfolio-overview__top > p{
+  grid-column:2;
+}
+
+/* remove tiny numbers inside colored stat cards */
+.page-achievements .portfolio-stat > span{
+  display:none !important;
+}
+.page-achievements .portfolio-stat b{
+  margin-top:0 !important;
+}
+
+/* remove the round "02" before selected education */
+.page-achievements .portfolio-case__label span:first-child{
+  display:none !important;
+}
+.page-achievements .portfolio-case__label{
+  gap:0 !important;
+  margin-bottom:18px;
+}
+
+/* mobile layout */
+@media (max-width: 900px){
+  .page-achievements .portfolio-overview__top{
+    grid-template-columns: 1fr !important;
+  }
+  .page-achievements .portfolio-overview__top > p{
+    grid-column:auto;
+  }
+}

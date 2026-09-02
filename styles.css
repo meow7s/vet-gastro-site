@@ -4161,3 +4161,140 @@ body > .footer{
     height:205px;
   }
 }
+
+
+/* ==========================================
+   ACHIEVEMENTS — featured blocks compact + title fix
+   ========================================== */
+.page-achievements .case-row{
+  min-height:430px;
+  margin-bottom:14px;
+  border-radius:28px;
+}
+.page-achievements .case-row__copy{
+  padding:40px 42px;
+}
+.page-achievements .case-row__eyebrow{
+  font-size:10px;
+  letter-spacing:.14em;
+}
+.page-achievements .case-row__copy h3{
+  max-width:580px;
+  margin:14px 0 16px;
+  padding-right:10px;
+  font-size:clamp(32px,3.9vw,56px);
+  line-height:1.02;              /* fixes cropped letters */
+  letter-spacing:-.04em;
+  overflow:visible;
+  word-break:normal;
+}
+.page-achievements .case-row__copy p{
+  max-width:470px;
+  font-size:14px;
+  line-height:1.45;
+  opacity:.8;
+}
+.page-achievements .case-open{
+  margin-top:14px;
+}
+.page-achievements .case-row__visual{
+  padding:34px 34px;
+}
+.page-achievements .case-row__frame{
+  width:min(100%,390px);
+}
+.page-achievements .case-row__frame img{
+  border-radius:10px;
+  box-shadow:
+    0 16px 32px rgba(22,48,71,.14),
+    0 4px 12px rgba(22,48,71,.08);
+}
+
+/* slightly smaller hero stack on the same page */
+.page-achievements .portfolio-stack{
+  height:520px;
+}
+.page-achievements .portfolio-stack__card--1{
+  width:350px;
+  height:350px;
+  left:26px;
+  top:96px;
+}
+.page-achievements .portfolio-stack__card--2{
+  width:290px;
+  height:290px;
+  right:24px;
+  top:14px;
+}
+.page-achievements .portfolio-stack__card--3{
+  width:240px;
+  height:240px;
+  right:42px;
+  bottom:20px;
+}
+.page-achievements .portfolio-stack__sticker{
+  width:132px;
+  height:132px;
+}
+
+@media (max-width:1050px){
+  .page-achievements .case-row{
+    min-height:380px;
+    border-radius:24px;
+  }
+  .page-achievements .case-row__copy{
+    padding:30px 28px;
+  }
+  .page-achievements .case-row__copy h3{
+    font-size:clamp(28px,4vw,46px);
+    line-height:1.03;
+    max-width:100%;
+  }
+  .page-achievements .case-row__copy p{
+    font-size:13px;
+    max-width:100%;
+  }
+  .page-achievements .case-row__visual{
+    padding:24px;
+  }
+  .page-achievements .case-row__frame{
+    width:min(100%,320px);
+  }
+  .page-achievements .portfolio-stack{
+    height:470px;
+  }
+  .page-achievements .portfolio-stack__card--1{
+    width:290px;height:290px;left:14px;top:110px;
+  }
+  .page-achievements .portfolio-stack__card--2{
+    width:235px;height:235px;right:10px;top:18px;
+  }
+  .page-achievements .portfolio-stack__card--3{
+    width:195px;height:195px;right:20px;bottom:10px;
+  }
+}
+
+@media (max-width:760px){
+  .page-achievements .case-row{
+    min-height:auto;
+    border-radius:22px;
+  }
+  .page-achievements .case-row__copy{
+    padding:24px 20px;
+  }
+  .page-achievements .case-row__copy h3{
+    font-size:clamp(26px,8vw,40px);
+    line-height:1.04;
+    margin:12px 0 14px;
+  }
+  .page-achievements .case-row__copy p{
+    font-size:13px;
+    line-height:1.5;
+  }
+  .page-achievements .case-row__visual{
+    padding:14px 18px 22px;
+  }
+  .page-achievements .case-row__frame{
+    width:min(100%,280px);
+  }
+}

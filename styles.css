@@ -2816,10 +2816,7 @@ body > .footer{
 }
 .header__cta.sparkle-cta .cta-spark::before{height:8px}
 .header__cta.sparkle-cta .cta-spark::after{width:8px}
-.header__cta.sparkle-cta:hover .cta-spark,
-.btn.sparkle-cta:hover .cta-spark{
-  animation-duration:2.15s;
-}
+
 @keyframes ctaShineSweep{
   0%,12%{transform:translateX(-135%) skewX(-18deg);opacity:0}
   20%{opacity:1}
@@ -2828,24 +2825,24 @@ body > .footer{
 }
 @keyframes ctaSparkle{
   0%,100%{
-    opacity:0;
-    transform:scale(.35) rotate(0deg);
+    opacity:.08;
+    transform:scale(.40) rotate(0deg);
   }
   12%{
-    opacity:.15;
-    transform:scale(.7) rotate(18deg);
+    opacity:.22;
+    transform:scale(.72) rotate(18deg);
   }
   24%{
     opacity:1;
     transform:scale(1) rotate(45deg);
   }
   36%{
-    opacity:.52;
-    transform:scale(.72) rotate(72deg);
+    opacity:.60;
+    transform:scale(.76) rotate(72deg);
   }
   48%{
-    opacity:0;
-    transform:scale(.35) rotate(90deg);
+    opacity:.10;
+    transform:scale(.42) rotate(90deg);
   }
 }
 @media (prefers-reduced-motion:reduce){

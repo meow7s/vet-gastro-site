@@ -4445,3 +4445,161 @@ body > .footer{
     padding:8px 22px 24px !important;
   }
 }
+
+
+/* ==========================================
+   Vertical education blocks — stacked certificates
+   ========================================== */
+.page-achievements .case-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:18px;
+  align-items:stretch;
+}
+
+.page-achievements .case-row--vertical{
+  min-height: 640px !important;
+}
+
+.page-achievements .case-row--vertical .case-row__visual{
+  padding:26px 22px 8px !important;
+  min-height: 280px;
+}
+
+.page-achievements .case-row--vertical .case-row__copy{
+  padding:10px 28px 28px !important;
+}
+
+.page-achievements .case-row--vertical .case-row__copy h3{
+  font-size:clamp(26px, 2.25vw, 33px) !important;
+  line-height:1.02 !important;
+  letter-spacing:-0.03em;
+  max-width:100% !important;
+  overflow:visible !important;
+  text-wrap:balance;
+  word-break:normal;
+  hyphens:none;
+}
+
+.page-achievements .case-row--vertical .case-row__copy p{
+  font-size:14px !important;
+  line-height:1.5 !important;
+  color:rgba(22,48,71,.72);
+  max-width:100% !important;
+}
+
+.page-achievements .case-row--vertical.case-row--dark .case-row__copy p{
+  color:rgba(255,255,255,.82);
+}
+
+.page-achievements .case-stack{
+  position:relative;
+  display:block;
+  width:min(100%, 270px);
+  height:230px;
+  margin:0 auto;
+}
+
+.page-achievements .stack-card{
+  position:absolute;
+  width:220px;
+  max-width:82%;
+  aspect-ratio: 1.38 / 1;
+  border-radius:18px;
+  overflow:hidden;
+  background:transparent;
+  box-shadow:0 18px 40px rgba(22,48,71,.12);
+  transition:transform .35s ease, box-shadow .35s ease, opacity .35s ease;
+}
+
+.page-achievements .stack-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.page-achievements .stack-card--front{
+  left:50%;
+  top:48%;
+  z-index:3;
+  transform:translate(-50%,-50%) rotate(-3deg);
+}
+
+.page-achievements .stack-card--mid{
+  left:48%;
+  top:40%;
+  z-index:2;
+  transform:translate(-50%,-50%) rotate(4deg);
+  opacity:.97;
+}
+
+.page-achievements .stack-card--back{
+  left:52%;
+  top:33%;
+  z-index:1;
+  transform:translate(-50%,-50%) rotate(-8deg);
+  opacity:.92;
+}
+
+.page-achievements .case-row__visual:hover .stack-card--front{
+  transform:translate(-51%,-51%) rotate(-5deg) scale(1.01);
+}
+.page-achievements .case-row__visual:hover .stack-card--mid{
+  transform:translate(-47%,-47%) rotate(6deg);
+}
+.page-achievements .case-row__visual:hover .stack-card--back{
+  transform:translate(-53%,-44%) rotate(-10deg);
+}
+
+.page-achievements .case-stack--therapy .stack-card--front{
+  transform:translate(-50%,-50%) rotate(-4deg);
+}
+.page-achievements .case-stack--therapy .stack-card--mid{
+  transform:translate(-50%,-50%) rotate(5deg) scale(.98);
+}
+.page-achievements .case-stack--therapy .stack-card--back{
+  transform:translate(-50%,-50%) rotate(-9deg) scale(.96);
+}
+
+.page-achievements .case-stack--diet .stack-card--front{
+  transform:translate(-50%,-48%) rotate(-1deg);
+}
+.page-achievements .case-stack--diet .stack-card--mid{
+  transform:translate(-49%,-52%) rotate(5deg);
+}
+.page-achievements .case-stack--diet .stack-card--back{
+  transform:translate(-51%,-40%) rotate(-7deg);
+}
+
+.page-achievements .case-row--vertical .case-pills{
+  margin-top:auto;
+}
+
+.page-achievements .case-row--vertical .case-open{
+  margin-top:auto;
+}
+
+@media (max-width: 1220px){
+  .page-achievements .case-row--vertical{
+    min-height: 610px !important;
+  }
+  .page-achievements .case-row--vertical .case-row__copy h3{
+    font-size:clamp(24px, 2vw, 30px) !important;
+  }
+  .page-achievements .stack-card{
+    width:205px;
+  }
+}
+
+@media (max-width: 1080px){
+  .page-achievements .case-grid{
+    grid-template-columns:1fr;
+  }
+  .page-achievements .case-row--vertical{
+    min-height:auto !important;
+  }
+  .page-achievements .case-row--vertical .case-row__visual{
+    min-height:250px;
+  }
+}

@@ -2977,3 +2977,262 @@ body > .footer{
     animation:none!important;
   }
 }
+
+
+/* ==========================================
+   CERTIFICATES — MORE BEAUTIFUL / PORTFOLIO FEEL
+   ========================================== */
+
+/* Hero stack on the achievements page */
+.portfolio-stack{
+  isolation:isolate;
+}
+.portfolio-stack::before{
+  content:"";
+  position:absolute;
+  inset:8% 10% 12% 12%;
+  border-radius:42px;
+  background:
+    radial-gradient(circle at 32% 35%, rgba(245, 210, 198, .42), transparent 34%),
+    radial-gradient(circle at 76% 24%, rgba(216, 197, 239, .42), transparent 30%),
+    radial-gradient(circle at 72% 78%, rgba(197, 228, 235, .36), transparent 32%);
+  filter:blur(12px);
+  z-index:0;
+}
+.portfolio-stack__card{
+  padding:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(252,249,244,.94));
+  border:1px solid rgba(22,48,71,.10);
+  box-shadow:
+    0 26px 70px rgba(22,48,71,.14),
+    0 8px 18px rgba(22,48,71,.06),
+    inset 0 1px 0 rgba(255,255,255,.95);
+}
+.portfolio-stack__card::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border-radius:20px;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.45), transparent 18%),
+    linear-gradient(135deg, rgba(22,48,71,.03), transparent 26%);
+  box-shadow:inset 0 0 0 1px rgba(22,48,71,.06);
+}
+.portfolio-stack__card::after{
+  content:"✦";
+  position:absolute;
+  top:16px;
+  right:18px;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  font-size:12px;
+  color:#163047;
+  background:rgba(255,255,255,.88);
+  box-shadow:0 8px 18px rgba(22,48,71,.10);
+}
+.portfolio-stack__card img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:
+    0 10px 24px rgba(22,48,71,.10),
+    0 1px 0 rgba(22,48,71,.05);
+}
+.portfolio-stack__sticker{
+  box-shadow:
+    0 18px 40px rgba(22,48,71,.12),
+    inset 0 1px 0 rgba(255,255,255,.4);
+}
+
+/* Gallery */
+.portfolio-doc,
+.certificate-item{
+  border-radius:30px;
+  border:1px solid rgba(22,48,71,.10);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,252,247,.96));
+  box-shadow:
+    0 12px 26px rgba(22,48,71,.05),
+    0 24px 60px rgba(22,48,71,.05);
+}
+.portfolio-doc::before,
+.certificate-item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(255,255,255,.48), transparent 18%),
+    linear-gradient(180deg, rgba(255,255,255,.16), transparent 24%);
+  z-index:0;
+}
+.portfolio-doc::after,
+.certificate-item::after{
+  content:"↗";
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  font-size:14px;
+  font-weight:800;
+  color:#163047;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 20px rgba(22,48,71,.10);
+  opacity:.92;
+}
+.portfolio-doc img,
+.certificate-item__image img{
+  position:relative;
+  z-index:1;
+}
+.portfolio-doc img{
+  width:calc(100% - 28px);
+  height:calc(100% - 96px);
+  margin:14px 14px 0;
+  object-fit:contain;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:
+    0 14px 30px rgba(22,48,71,.12),
+    0 1px 0 rgba(22,48,71,.05);
+}
+.certificate-item__image{
+  background:
+    radial-gradient(circle at 14% 16%, rgba(255,255,255,.34), transparent 20%),
+    linear-gradient(160deg, rgba(22,48,71,.035), transparent 36%);
+  border-bottom:0;
+}
+.certificate-item__image img{
+  background:#fff;
+  padding:10px;
+  box-shadow:
+    0 14px 28px rgba(22,48,71,.12),
+    0 2px 0 rgba(22,48,71,.04);
+}
+.portfolio-doc>span{
+  left:16px;
+  right:16px;
+  bottom:16px;
+  padding:15px 16px;
+  border-radius:18px;
+  background:rgba(255,253,248,.92);
+  border:1px solid rgba(22,48,71,.08);
+  box-shadow:0 8px 18px rgba(22,48,71,.08);
+}
+.certificate-item__body{
+  min-height:168px;
+  padding:18px 20px 20px;
+}
+.certificate-item__type{
+  color:#ff8152;
+  font-size:10px;
+  letter-spacing:.10em;
+}
+.certificate-item__body b,
+.portfolio-doc b{
+  color:#163047;
+  letter-spacing:-.03em;
+}
+.certificate-item__body>span:last-child,
+.portfolio-doc small{
+  opacity:.68;
+}
+
+/* Slight editorial variety */
+.portfolio-doc--a img{transform:rotate(-2deg)}
+.portfolio-doc--b img{transform:rotate(2deg)}
+.portfolio-doc--c img{transform:rotate(-1.4deg)}
+.portfolio-doc--d img{transform:rotate(1.8deg)}
+.portfolio-doc--e img{transform:rotate(-2.2deg)}
+.portfolio-doc--f img{transform:rotate(1.2deg)}
+.portfolio-doc--g img{transform:rotate(-1.2deg)}
+.portfolio-doc--h img{transform:rotate(2deg)}
+.portfolio-doc--i img{transform:rotate(-1.8deg)}
+.portfolio-doc--j img{transform:rotate(1.4deg)}
+.portfolio-doc--k img{transform:rotate(-1.1deg)}
+.portfolio-doc--l img{transform:rotate(1.7deg)}
+.portfolio-doc--m img{transform:rotate(-1deg)}
+
+.portfolio-doc:hover,
+.certificate-item:hover,
+.feature-cert:hover{
+  box-shadow:
+    0 16px 34px rgba(22,48,71,.08),
+    0 28px 70px rgba(22,48,71,.09);
+}
+.portfolio-doc:hover img{
+  transform:scale(1.03) translateY(-2px);
+}
+.certificate-item:hover .certificate-item__image img{
+  transform:scale(1.025) translateY(-1px);
+}
+.portfolio-stack__card:hover{
+  box-shadow:
+    0 30px 80px rgba(22,48,71,.16),
+    0 10px 24px rgba(22,48,71,.08),
+    inset 0 1px 0 rgba(255,255,255,.95);
+}
+
+/* Featured / timeline certs above the gallery */
+.feature-cert{
+  border:1px solid rgba(22,48,71,.10);
+  background:linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,252,247,.98));
+}
+.feature-cert__thumb{
+  border-bottom:1px solid rgba(22,48,71,.06);
+}
+.feature-cert__thumb img{
+  background:#fff;
+  box-shadow:0 14px 28px rgba(22,48,71,.10);
+}
+.timeline-item{
+  background:rgba(255,255,255,.46);
+  border:1px solid rgba(22,48,71,.08);
+  box-shadow:0 8px 18px rgba(22,48,71,.04);
+}
+.timeline-item:hover{
+  background:rgba(255,255,255,.72);
+}
+
+/* Modal document viewer a bit richer */
+.cert-lightbox__inner img{
+  background:#fff;
+  padding:12px;
+  box-shadow:
+    0 32px 90px rgba(0,0,0,.42),
+    0 0 0 1px rgba(255,255,255,.16);
+}
+.cert-lightbox__caption{
+  background:rgba(255,255,255,.14);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+@media (max-width:760px){
+  .portfolio-doc img{
+    width:calc(100% - 22px);
+    height:calc(100% - 88px);
+    margin:11px 11px 0;
+    border-radius:16px;
+  }
+  .portfolio-doc::after,
+  .certificate-item::after{
+    width:30px;
+    height:30px;
+    font-size:13px;
+    top:10px;
+    right:10px;
+  }
+}

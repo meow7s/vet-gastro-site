@@ -889,7 +889,7 @@ body.lightbox-open{overflow:hidden}
 
 .timeline-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:18px;
 }
 .timeline-year{
@@ -2850,5 +2850,16 @@ body > .footer{
   .sparkle-cta .cta-spark{
     animation:none!important;
     opacity:.35;
+  }
+}
+
+
+/* Timeline: 2024 / 2025 / 2026 */
+@media (min-width:1051px){
+  .timeline-grid .timeline-year__head b{
+    font-size:66px;
+  }
+  .timeline-grid .timeline-item{
+    grid-template-columns:72px 1fr auto;
   }
 }

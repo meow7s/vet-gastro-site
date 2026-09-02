@@ -3236,3 +3236,928 @@ body > .footer{
     right:10px;
   }
 }
+
+
+/* ==========================================
+   ACHIEVEMENTS — BEHANCE CASE STYLE
+   ========================================== */
+.page-achievements .portfolio-hero{
+  position:relative;
+  padding-top:42px;
+}
+.page-achievements .portfolio-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(246,232,168,.18), transparent 18%),
+    radial-gradient(circle at 20% 68%, rgba(216,197,239,.18), transparent 18%),
+    linear-gradient(180deg, rgba(255,255,255,.08), transparent 35%);
+}
+.page-achievements .portfolio-hero__grid{
+  align-items:center;
+  gap:36px;
+}
+.page-achievements .portfolio-hero__copy{
+  position:relative;
+  z-index:2;
+}
+.page-achievements .portfolio-tag{
+  background:rgba(255,251,244,.84);
+  backdrop-filter:blur(8px);
+  box-shadow:0 10px 28px rgba(22,48,71,.05);
+}
+.page-achievements .portfolio-hero__copy h1{
+  max-width:860px;
+}
+.page-achievements .portfolio-hero__copy p{
+  max-width:560px;
+  font-size:16px;
+  line-height:1.58;
+}
+.page-achievements .portfolio-stack{
+  height:600px;
+  padding:26px;
+  border-radius:40px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.62), rgba(252,248,241,.46)),
+    radial-gradient(circle at 12% 18%, rgba(197,228,235,.28), transparent 28%),
+    radial-gradient(circle at 84% 22%, rgba(245,209,198,.28), transparent 24%);
+  border:1px solid rgba(22,48,71,.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.7),
+    0 24px 70px rgba(22,48,71,.06);
+}
+.page-achievements .portfolio-stack::after{
+  content:"CASE STUDY / CERTIFICATES";
+  position:absolute;
+  right:20px;
+  bottom:16px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.18em;
+  color:rgba(22,48,71,.28);
+}
+.page-achievements .portfolio-stack__card{
+  border-radius:26px;
+  padding:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(252,249,245,.97));
+  box-shadow:
+    0 20px 55px rgba(22,48,71,.13),
+    0 8px 20px rgba(22,48,71,.05),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+.page-achievements .portfolio-stack__card::before{
+  box-shadow:
+    inset 0 0 0 1px rgba(22,48,71,.06),
+    inset 0 20px 40px rgba(255,255,255,.45);
+}
+.page-achievements .portfolio-stack__card::after{
+  content:"open";
+  top:14px;
+  right:14px;
+  width:auto;
+  min-width:48px;
+  height:28px;
+  padding:0 10px;
+  border-radius:999px;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:900;
+  background:rgba(255,255,255,.92);
+}
+.page-achievements .portfolio-stack__card img{
+  border-radius:18px;
+  object-fit:contain;
+  background:#fff;
+}
+.page-achievements .portfolio-stack__card--1{
+  left:32px;
+  top:114px;
+  width:380px;
+  height:380px;
+  transform:rotate(-8deg);
+}
+.page-achievements .portfolio-stack__card--2{
+  right:28px;
+  top:28px;
+  width:315px;
+  height:315px;
+  transform:rotate(10deg);
+}
+.page-achievements .portfolio-stack__card--3{
+  right:56px;
+  bottom:22px;
+  width:260px;
+  height:260px;
+  transform:rotate(5deg);
+}
+.page-achievements .portfolio-stack__sticker{
+  left:10px;
+  bottom:16px;
+  width:142px;
+  height:142px;
+  background:linear-gradient(180deg, #ffe887, #f7dc63);
+  color:#163047;
+  box-shadow:0 20px 45px rgba(22,48,71,.12), inset 0 1px 0 rgba(255,255,255,.42);
+}
+.page-achievements .portfolio-stack:hover .portfolio-stack__card--1{
+  transform:translate(-28px,6px) rotate(-14deg) scale(1.02);
+}
+.page-achievements .portfolio-stack:hover .portfolio-stack__card--2{
+  transform:translate(30px,-10px) rotate(15deg) scale(1.02);
+}
+.page-achievements .portfolio-stack:hover .portfolio-stack__card--3{
+  transform:translate(22px,18px) rotate(8deg) scale(1.03);
+}
+
+/* Top blocks */
+.page-achievements .portfolio-overview__top{
+  grid-template-columns:auto 1fr minmax(280px, 420px);
+  align-items:end;
+  gap:20px;
+}
+.page-achievements .portfolio-index{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#163047;
+  color:#fff;
+  box-shadow:0 14px 30px rgba(22,48,71,.14);
+}
+.page-achievements .portfolio-overview__top p{
+  padding:18px 20px;
+  border-radius:20px;
+  background:rgba(255,255,255,.56);
+  border:1px solid rgba(22,48,71,.08);
+  box-shadow:0 10px 24px rgba(22,48,71,.04);
+}
+
+/* Timeline section feels like a case study board */
+.page-achievements .timeline-section{
+  position:relative;
+}
+.page-achievements .timeline-section .container{
+  position:relative;
+}
+.page-achievements .timeline-section .container::before{
+  content:"";
+  position:absolute;
+  inset:-12px 0 auto 0;
+  height:240px;
+  border-radius:34px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.58), rgba(252,248,241,.34)),
+    radial-gradient(circle at 16% 50%, rgba(216,197,239,.22), transparent 28%),
+    radial-gradient(circle at 84% 22%, rgba(197,228,235,.20), transparent 24%);
+  z-index:0;
+}
+.page-achievements .timeline-copy,
+.page-achievements .timeline-grid{
+  position:relative;
+  z-index:1;
+}
+.page-achievements .timeline-copy p{
+  max-width:460px;
+  padding-right:8px;
+}
+.page-achievements .timeline-year__head b{
+  font-size:74px;
+  letter-spacing:-.06em;
+}
+.page-achievements .timeline-year__head span{
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.56);
+  border:1px solid rgba(22,48,71,.08);
+}
+.page-achievements .timeline-item{
+  border-radius:22px;
+  min-height:64px;
+  padding:0 18px;
+  background:rgba(255,255,255,.62);
+  border:1px solid rgba(22,48,71,.08);
+  box-shadow:0 10px 24px rgba(22,48,71,.05);
+}
+.page-achievements .timeline-item span{
+  font-size:11px;
+}
+.page-achievements .timeline-item b{
+  font-size:15px;
+}
+.page-achievements .timeline-item:hover{
+  transform:translateY(-2px);
+}
+
+/* Full archive block */
+.page-achievements .portfolio-gallery-section{
+  padding-top:82px;
+}
+.page-achievements .portfolio-gallery-section .container{
+  position:relative;
+  padding:34px;
+  border-radius:38px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.48), rgba(250,246,239,.74)),
+    radial-gradient(circle at 8% 10%, rgba(245,209,198,.18), transparent 18%),
+    radial-gradient(circle at 92% 22%, rgba(216,197,239,.18), transparent 18%),
+    radial-gradient(circle at 76% 88%, rgba(197,228,235,.16), transparent 20%);
+  border:1px solid rgba(22,48,71,.08);
+  box-shadow:0 18px 48px rgba(22,48,71,.05);
+}
+.page-achievements .portfolio-overview__top h2{
+  font-size:clamp(34px,4.2vw,56px);
+  letter-spacing:-.05em;
+}
+.page-achievements .portfolio-masonry{
+  gap:22px;
+  align-items:stretch;
+}
+.page-achievements .portfolio-doc,
+.page-achievements .certificate-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:32px;
+  border:1px solid rgba(22,48,71,.10);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,251,245,.98));
+  box-shadow:
+    0 18px 38px rgba(22,48,71,.05),
+    0 30px 80px rgba(22,48,71,.06);
+}
+.page-achievements .portfolio-doc::before,
+.page-achievements .certificate-item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.2), transparent 22%),
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,.5), transparent 17%);
+  pointer-events:none;
+  z-index:0;
+}
+.page-achievements .portfolio-doc::after,
+.page-achievements .certificate-item::after{
+  top:16px;
+  right:16px;
+  width:38px;
+  height:38px;
+  font-size:15px;
+  background:rgba(255,255,255,.9);
+}
+.page-achievements .portfolio-doc img{
+  width:calc(100% - 32px);
+  height:calc(100% - 118px);
+  margin:16px 16px 0;
+  border-radius:20px;
+  object-fit:contain;
+  background:#fff;
+  box-shadow:
+    0 18px 34px rgba(22,48,71,.10),
+    0 1px 0 rgba(22,48,71,.05);
+}
+.page-achievements .portfolio-doc>span{
+  left:16px;
+  right:16px;
+  bottom:16px;
+  display:flex;
+  gap:6px;
+  padding:16px 16px 15px;
+  border-radius:20px;
+  background:rgba(255,253,249,.92);
+  border:1px solid rgba(22,48,71,.08);
+  box-shadow:0 10px 22px rgba(22,48,71,.07);
+}
+.page-achievements .portfolio-doc>span::before{
+  content:"education";
+  display:inline-flex;
+  width:max-content;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#163047;
+  background:#efe9de;
+  margin-bottom:4px;
+}
+.page-achievements .portfolio-doc:nth-child(3n+2)>span::before{
+  content:"conference";
+  background:#e7def6;
+}
+.page-achievements .portfolio-doc:nth-child(3n+3)>span::before{
+  content:"course";
+  background:#dff0f4;
+}
+.page-achievements .portfolio-doc b{
+  font-size:14px;
+  line-height:1.18;
+}
+.page-achievements .portfolio-doc small{
+  font-size:10px;
+  opacity:.66;
+}
+.page-achievements .portfolio-doc:hover{
+  transform:translateY(-6px);
+}
+.page-achievements .portfolio-doc:hover img{
+  transform:scale(1.028) translateY(-3px);
+}
+.page-achievements .portfolio-doc--a{grid-column:span 4;min-height:470px}
+.page-achievements .portfolio-doc--b{grid-column:span 4;min-height:390px;transform:translateY(26px)}
+.page-achievements .portfolio-doc--c{grid-column:span 4;min-height:440px}
+.page-achievements .portfolio-doc--d{grid-column:span 3;min-height:360px}
+.page-achievements .portfolio-doc--e{grid-column:span 5;min-height:410px}
+.page-achievements .portfolio-doc--f{grid-column:span 4;min-height:360px}
+.page-achievements .portfolio-doc--g{grid-column:span 5;min-height:420px}
+.page-achievements .portfolio-doc--h{grid-column:span 3;min-height:360px;transform:translateY(-18px)}
+.page-achievements .portfolio-doc--i{grid-column:span 4;min-height:400px}
+.page-achievements .portfolio-doc--j{grid-column:span 4;min-height:360px}
+.page-achievements .portfolio-doc--k{grid-column:span 4;min-height:360px}
+.page-achievements .portfolio-doc--l{grid-column:span 4;min-height:350px}
+.page-achievements .portfolio-doc--m{grid-column:3 / span 8;min-height:520px}
+
+/* pastel boards under cards for that Behance mood */
+.page-achievements .portfolio-doc--a{background:linear-gradient(180deg,#fff5f1,#fffdf8)}
+.page-achievements .portfolio-doc--b{background:linear-gradient(180deg,#f8f3ff,#fffdf8)}
+.page-achievements .portfolio-doc--c{background:linear-gradient(180deg,#f3fbfd,#fffdf8)}
+.page-achievements .portfolio-doc--d{background:linear-gradient(180deg,#fff7d9,#fffdf8)}
+.page-achievements .portfolio-doc--e{background:linear-gradient(180deg,#fff6ef,#fffdf8)}
+.page-achievements .portfolio-doc--f{background:linear-gradient(180deg,#f4f8ff,#fffdf8)}
+.page-achievements .portfolio-doc--g{background:linear-gradient(180deg,#f6fbff,#fffdf8)}
+.page-achievements .portfolio-doc--h{background:linear-gradient(180deg,#fff8e9,#fffdf8)}
+.page-achievements .portfolio-doc--i{background:linear-gradient(180deg,#f8f4ff,#fffdf8)}
+.page-achievements .portfolio-doc--j{background:linear-gradient(180deg,#f7fbfd,#fffdf8)}
+.page-achievements .portfolio-doc--k{background:linear-gradient(180deg,#fff5f1,#fffdf8)}
+.page-achievements .portfolio-doc--l{background:linear-gradient(180deg,#f9f4ff,#fffdf8)}
+.page-achievements .portfolio-doc--m{background:linear-gradient(180deg,#f6fbfd,#fffdf8)}
+
+.page-achievements .portfolio-doc--a img{transform:rotate(-2.8deg)}
+.page-achievements .portfolio-doc--b img{transform:rotate(2.5deg)}
+.page-achievements .portfolio-doc--c img{transform:rotate(-1.4deg)}
+.page-achievements .portfolio-doc--d img{transform:rotate(1.8deg)}
+.page-achievements .portfolio-doc--e img{transform:rotate(-2deg)}
+.page-achievements .portfolio-doc--f img{transform:rotate(1.2deg)}
+.page-achievements .portfolio-doc--g img{transform:rotate(-1.6deg)}
+.page-achievements .portfolio-doc--h img{transform:rotate(2deg)}
+.page-achievements .portfolio-doc--i img{transform:rotate(-2.3deg)}
+.page-achievements .portfolio-doc--j img{transform:rotate(1.4deg)}
+.page-achievements .portfolio-doc--k img{transform:rotate(-1.3deg)}
+.page-achievements .portfolio-doc--l img{transform:rotate(1.7deg)}
+.page-achievements .portfolio-doc--m img{transform:rotate(-1deg)}
+
+.page-achievements .portfolio-outro__box{
+  background:
+    linear-gradient(135deg, rgba(216,197,239,.92), rgba(197,228,235,.92)),
+    linear-gradient(180deg, rgba(255,255,255,.18), transparent);
+  box-shadow:0 20px 50px rgba(22,48,71,.08);
+}
+
+@media (max-width:1050px){
+  .page-achievements .portfolio-gallery-section .container{
+    padding:22px;
+  }
+  .page-achievements .portfolio-doc--a,.page-achievements .portfolio-doc--b,.page-achievements .portfolio-doc--c,
+  .page-achievements .portfolio-doc--d,.page-achievements .portfolio-doc--e,.page-achievements .portfolio-doc--f,
+  .page-achievements .portfolio-doc--g,.page-achievements .portfolio-doc--h,.page-achievements .portfolio-doc--i,
+  .page-achievements .portfolio-doc--j,.page-achievements .portfolio-doc--k,.page-achievements .portfolio-doc--l,
+  .page-achievements .portfolio-doc--m{
+    grid-column:span 3;
+    min-height:370px;
+    transform:none;
+  }
+  .page-achievements .portfolio-stack{
+    height:470px;
+  }
+  .page-achievements .portfolio-stack__card--1{width:255px;height:255px;left:6px;top:108px}
+  .page-achievements .portfolio-stack__card--2{width:214px;height:214px;right:6px;top:20px}
+  .page-achievements .portfolio-stack__card--3{width:184px;height:184px;right:24px;bottom:10px}
+  .page-achievements .timeline-year__head b{
+    font-size:62px;
+  }
+}
+
+@media (max-width:760px){
+  .page-achievements .portfolio-stack{
+    height:420px;
+    padding:18px;
+  }
+  .page-achievements .portfolio-stack__card{
+    padding:10px;
+    border-radius:20px;
+  }
+  .page-achievements .portfolio-stack__card--1{width:220px;height:220px;left:0;top:110px}
+  .page-achievements .portfolio-stack__card--2{width:180px;height:180px;right:0;top:18px}
+  .page-achievements .portfolio-stack__card--3{width:148px;height:148px;right:18px;bottom:2px}
+  .page-achievements .portfolio-stack__sticker{
+    width:104px;
+    height:104px;
+    font-size:9px;
+  }
+  .page-achievements .portfolio-gallery-section .container{
+    padding:16px;
+    border-radius:28px;
+  }
+  .page-achievements .portfolio-doc img{
+    width:calc(100% - 24px);
+    height:calc(100% - 100px);
+    margin:12px 12px 0;
+    border-radius:16px;
+  }
+  .page-achievements .portfolio-doc>span{
+    left:12px;right:12px;bottom:12px;
+    padding:14px;
+    border-radius:16px;
+  }
+}
+
+
+/* ==========================================
+   COMPACT FULL CERTIFICATE GALLERY
+   ========================================== */
+.page-achievements .portfolio-gallery-section{
+  padding-top:58px;
+}
+.page-achievements .portfolio-gallery-section .container{
+  padding:24px;
+  border-radius:30px;
+}
+.page-achievements .portfolio-gallery-section .portfolio-overview__top{
+  margin-bottom:22px;
+}
+.page-achievements .portfolio-gallery-section .portfolio-overview__top h2{
+  font-size:clamp(32px,3.7vw,50px);
+}
+.page-achievements .portfolio-gallery-section .portfolio-overview__top p{
+  padding:14px 16px;
+  font-size:12px;
+  line-height:1.45;
+}
+.page-achievements .portfolio-masonry{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  grid-auto-flow:dense;
+  gap:14px;
+}
+.page-achievements .portfolio-doc,
+.page-achievements .certificate-item{
+  grid-column:span 3!important;
+  min-height:300px!important;
+  transform:none!important;
+  border-radius:24px;
+}
+.page-achievements .portfolio-doc img{
+  width:calc(100% - 22px);
+  height:205px;
+  margin:11px 11px 0;
+  border-radius:15px;
+  object-fit:contain;
+}
+.page-achievements .portfolio-doc>span{
+  left:11px;
+  right:11px;
+  bottom:11px;
+  min-height:72px;
+  padding:11px 12px 10px;
+  border-radius:15px;
+  gap:3px;
+}
+.page-achievements .portfolio-doc>span::before{
+  padding:5px 8px;
+  margin-bottom:2px;
+  font-size:8px;
+  letter-spacing:.10em;
+}
+.page-achievements .portfolio-doc b{
+  font-size:12px;
+  line-height:1.14;
+}
+.page-achievements .portfolio-doc small{
+  font-size:9px;
+}
+.page-achievements .portfolio-doc::after,
+.page-achievements .certificate-item::after{
+  top:10px;
+  right:10px;
+  width:30px;
+  height:30px;
+  font-size:12px;
+}
+.page-achievements .portfolio-doc:hover{
+  transform:translateY(-4px)!important;
+}
+.page-achievements .portfolio-doc:hover img{
+  transform:scale(1.018) translateY(-1px);
+}
+
+/* Remove oversized feature-card treatment inside the full archive */
+.page-achievements .portfolio-doc--m{
+  grid-column:span 3!important;
+  min-height:300px!important;
+}
+.page-achievements .portfolio-doc--m img{
+  transform:rotate(-1deg);
+}
+
+@media (max-width:1050px){
+  .page-achievements .portfolio-gallery-section .container{
+    padding:20px;
+  }
+  .page-achievements .portfolio-doc,
+  .page-achievements .certificate-item,
+  .page-achievements .portfolio-doc--m{
+    grid-column:span 4!important;
+    min-height:300px!important;
+  }
+}
+
+@media (max-width:760px){
+  .page-achievements .portfolio-gallery-section{
+    padding-top:44px;
+  }
+  .page-achievements .portfolio-gallery-section .container{
+    padding:14px;
+    border-radius:24px;
+  }
+  .page-achievements .portfolio-masonry{
+    gap:11px;
+  }
+  .page-achievements .portfolio-doc,
+  .page-achievements .certificate-item,
+  .page-achievements .portfolio-doc--m{
+    grid-column:span 6!important;
+    min-height:270px!important;
+  }
+  .page-achievements .portfolio-doc img{
+    height:180px;
+  }
+  .page-achievements .portfolio-doc>span{
+    min-height:65px;
+  }
+}
+
+@media (max-width:520px){
+  .page-achievements .portfolio-doc,
+  .page-achievements .certificate-item,
+  .page-achievements .portfolio-doc--m{
+    grid-column:span 12!important;
+    min-height:265px!important;
+  }
+  .page-achievements .portfolio-doc img{
+    height:178px;
+  }
+}
+
+
+/* ==========================================
+   ACHIEVEMENTS — CLEAN LUXE GALLERY
+   Replaces the previous Behance-style treatment
+   ========================================== */
+
+/* General page mood */
+.page-achievements .portfolio-hero{
+  padding-top:54px;
+}
+.page-achievements .portfolio-hero::before{
+  background:
+    radial-gradient(circle at 82% 18%, rgba(247,222,120,.10), transparent 20%),
+    radial-gradient(circle at 16% 72%, rgba(197,228,235,.10), transparent 20%);
+}
+.page-achievements .portfolio-hero__word{
+  opacity:.55;
+}
+.page-achievements .portfolio-tag{
+  background:transparent;
+  backdrop-filter:none;
+  box-shadow:none;
+}
+
+/* Hero certificate stack: documents float directly, no background plates */
+.page-achievements .portfolio-stack{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  padding:0;
+  border-radius:0;
+}
+.page-achievements .portfolio-stack::before{
+  display:none;
+}
+.page-achievements .portfolio-stack::after{
+  color:rgba(22,48,71,.22);
+  bottom:6px;
+  right:8px;
+}
+.page-achievements .portfolio-stack__card{
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:18px;
+  overflow:visible;
+  box-shadow:none;
+}
+.page-achievements .portfolio-stack__card::before,
+.page-achievements .portfolio-stack__card::after{
+  display:none;
+}
+.page-achievements .portfolio-stack__card img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:12px;
+  background:transparent;
+  box-shadow:
+    0 18px 38px rgba(22,48,71,.16),
+    0 4px 12px rgba(22,48,71,.08);
+  transition:
+    transform .55s cubic-bezier(.16,.84,.24,1),
+    filter .35s ease,
+    box-shadow .35s ease;
+}
+.page-achievements .portfolio-stack__card:hover img{
+  box-shadow:
+    0 26px 54px rgba(22,48,71,.19),
+    0 7px 18px rgba(22,48,71,.10);
+}
+.page-achievements .portfolio-stack__sticker{
+  background:rgba(247,222,120,.92);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(22,48,71,.09);
+}
+
+/* Overview should feel editorial, not like a card dashboard */
+.page-achievements .portfolio-overview__top p{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  padding:0;
+}
+.page-achievements .portfolio-index{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid rgba(22,48,71,.45);
+  box-shadow:none;
+}
+
+/* Timeline clean-up */
+.page-achievements .timeline-section .container::before{
+  display:none;
+}
+.page-achievements .timeline-year__head span{
+  background:transparent;
+  border:1px solid rgba(22,48,71,.10);
+}
+.page-achievements .timeline-item{
+  background:transparent;
+  border:0;
+  border-bottom:1px solid rgba(22,48,71,.12);
+  border-radius:0;
+  box-shadow:none;
+  padding-left:0;
+  padding-right:0;
+}
+.page-achievements .timeline-item:hover{
+  background:transparent;
+  transform:translateX(4px);
+}
+.page-achievements .timeline-item i{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  border:1px solid rgba(22,48,71,.12);
+}
+
+/* Full gallery: no cards, no colored backplates, no frames behind certificates */
+.page-achievements .portfolio-gallery-section{
+  padding-top:64px;
+}
+.page-achievements .portfolio-gallery-section .container{
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.page-achievements .portfolio-gallery-section .portfolio-overview__top{
+  margin-bottom:30px;
+}
+.page-achievements .portfolio-masonry{
+  gap:28px 22px;
+}
+.page-achievements .portfolio-doc,
+.page-achievements .certificate-item{
+  position:relative;
+  min-height:0!important;
+  padding:0 0 12px;
+  border:0;
+  border-radius:0;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:visible;
+  transform:none!important;
+}
+.page-achievements .portfolio-doc::before,
+.page-achievements .certificate-item::before{
+  display:none;
+}
+.page-achievements .portfolio-doc::after,
+.page-achievements .certificate-item::after{
+  content:"↗";
+  top:8px;
+  right:8px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:rgba(245,240,230,.88);
+  border:1px solid rgba(22,48,71,.10);
+  color:var(--ink);
+  box-shadow:0 6px 14px rgba(22,48,71,.08);
+  opacity:0;
+  transform:translateY(4px);
+  transition:opacity .25s ease, transform .25s ease;
+}
+.page-achievements .portfolio-doc:hover::after,
+.page-achievements .certificate-item:hover::after{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* The certificate itself is the visual — no plate behind it */
+.page-achievements .portfolio-doc img{
+  display:block;
+  width:100%;
+  height:210px;
+  margin:0;
+  padding:0;
+  object-fit:contain;
+  border-radius:10px;
+  background:transparent;
+  box-shadow:
+    0 12px 28px rgba(22,48,71,.12),
+    0 3px 9px rgba(22,48,71,.06);
+  transform:none!important;
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1),
+    box-shadow .35s ease,
+    filter .35s ease;
+}
+.page-achievements .portfolio-doc:hover img{
+  transform:translateY(-5px) scale(1.018)!important;
+  box-shadow:
+    0 22px 40px rgba(22,48,71,.16),
+    0 6px 14px rgba(22,48,71,.08);
+  filter:saturate(1.03);
+}
+
+/* Caption sits below the document, not on a translucent block */
+.page-achievements .portfolio-doc>span{
+  position:static;
+  margin-top:14px;
+  padding:0;
+  min-height:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  backdrop-filter:none;
+  box-shadow:none;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.page-achievements .portfolio-doc>span::before{
+  display:none;
+}
+.page-achievements .portfolio-doc b{
+  font-size:13px;
+  line-height:1.22;
+  font-weight:800;
+  color:var(--ink);
+}
+.page-achievements .portfolio-doc small{
+  font-size:10px;
+  opacity:.58;
+}
+
+/* Fine separators make the gallery feel premium and calm */
+.page-achievements .portfolio-doc>span::after{
+  content:"";
+  display:block;
+  width:34px;
+  height:1px;
+  margin-top:8px;
+  background:rgba(22,48,71,.18);
+  transition:width .3s ease, background .3s ease;
+}
+.page-achievements .portfolio-doc:hover>span::after{
+  width:58px;
+  background:var(--coral);
+}
+
+/* Keep the compact 4-column layout */
+.page-achievements .portfolio-doc,
+.page-achievements .certificate-item,
+.page-achievements .portfolio-doc--m{
+  grid-column:span 3!important;
+}
+
+/* Remove all former pastel per-card backgrounds */
+.page-achievements .portfolio-doc--a,
+.page-achievements .portfolio-doc--b,
+.page-achievements .portfolio-doc--c,
+.page-achievements .portfolio-doc--d,
+.page-achievements .portfolio-doc--e,
+.page-achievements .portfolio-doc--f,
+.page-achievements .portfolio-doc--g,
+.page-achievements .portfolio-doc--h,
+.page-achievements .portfolio-doc--i,
+.page-achievements .portfolio-doc--j,
+.page-achievements .portfolio-doc--k,
+.page-achievements .portfolio-doc--l,
+.page-achievements .portfolio-doc--m{
+  background:transparent!important;
+}
+
+/* Featured certificate visuals also lose the underlay */
+.page-achievements .feature-cert{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+.page-achievements .feature-cert__thumb{
+  padding:0;
+  background:transparent!important;
+  border:0;
+}
+.page-achievements .feature-cert__thumb img{
+  background:transparent;
+  border-radius:10px;
+  box-shadow:
+    0 14px 30px rgba(22,48,71,.13),
+    0 3px 10px rgba(22,48,71,.06);
+}
+.page-achievements .feature-cert__info{
+  padding-left:0;
+  padding-right:0;
+}
+
+/* Case study certificate visuals: document only, no white square plate */
+.page-achievements .case-row__frame{
+  padding:0!important;
+  background:transparent!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.page-achievements .case-row__frame img{
+  border-radius:12px;
+  background:transparent;
+  box-shadow:
+    0 18px 42px rgba(22,48,71,.15),
+    0 5px 14px rgba(22,48,71,.08);
+}
+
+/* Slightly more elegant modal */
+.page-achievements .cert-lightbox__inner img{
+  padding:0;
+  background:transparent;
+  border-radius:8px;
+}
+
+@media (max-width:1050px){
+  .page-achievements .portfolio-doc,
+  .page-achievements .certificate-item,
+  .page-achievements .portfolio-doc--m{
+    grid-column:span 4!important;
+  }
+  .page-achievements .portfolio-doc img{
+    height:205px;
+  }
+}
+@media (max-width:760px){
+  .page-achievements .portfolio-masonry{
+    gap:22px 14px;
+  }
+  .page-achievements .portfolio-doc,
+  .page-achievements .certificate-item,
+  .page-achievements .portfolio-doc--m{
+    grid-column:span 6!important;
+  }
+  .page-achievements .portfolio-doc img{
+    height:175px;
+  }
+}
+@media (max-width:520px){
+  .page-achievements .portfolio-doc,
+  .page-achievements .certificate-item,
+  .page-achievements .portfolio-doc--m{
+    grid-column:span 12!important;
+  }
+  .page-achievements .portfolio-doc img{
+    height:205px;
+  }
+}

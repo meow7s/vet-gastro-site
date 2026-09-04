@@ -744,9 +744,10 @@ body.lightbox-open{overflow:hidden}
 }
 .portfolio-overview__top p{
   margin:0;
-  font-size:13px;
-  opacity:.7;
-  max-width:410px;
+  font-size:16px;
+  line-height:1.55;
+  opacity:.82;
+  max-width:620px;
 }
 .portfolio-stats{
   display:grid;
@@ -754,25 +755,27 @@ body.lightbox-open{overflow:hidden}
   gap:14px;
 }
 .portfolio-stat{
-  min-height:230px;
-  padding:22px;
+  min-height:180px;
+  padding:20px 22px 18px;
   border-radius:26px;
   border:1px solid var(--line);
   display:flex;
   flex-direction:column;
 }
-.portfolio-stat span{font-size:10px;font-weight:850;opacity:.55}
+.portfolio-stat span{font-size:11px;font-weight:850;opacity:.62;letter-spacing:.02em}
 .portfolio-stat b{
-  margin-top:34px;
+  margin-top:18px;
   font-size:58px;
   line-height:1;
   letter-spacing:-.065em;
 }
 .portfolio-stat p{
-  margin:auto 0 0;
-  font-size:11px;
-  max-width:180px;
-  opacity:.7;
+  margin:14px 0 0;
+  font-size:15px;
+  line-height:1.42;
+  max-width:none;
+  opacity:.84;
+  text-wrap:balance;
 }
 .portfolio-stat--yellow{background:var(--yellow)}
 .portfolio-stat--violet{background:var(--lavender)}
@@ -4601,5 +4604,42 @@ body > .footer{
   }
   .page-achievements .case-row--vertical .case-row__visual{
     min-height:250px;
+  }
+}
+
+
+@media (max-width: 900px){
+  .portfolio-overview__top p{font-size:15px;max-width:100%;}
+  .portfolio-stat{min-height:170px;padding:18px 18px 16px;}
+  .portfolio-stat b{font-size:50px;margin-top:14px;}
+  .portfolio-stat p{font-size:14px;}
+}
+
+
+/* Homepage real photo integration */
+.doctor-photo-card:not(.is-placeholder){
+  background: rgba(255,255,255,.68);
+}
+.doctor-photo-card:not(.is-placeholder) .doctor-photo-card__media{
+  background: linear-gradient(180deg,rgba(252,249,242,.60),rgba(238,234,225,.72));
+}
+.doctor-photo-card:not(.is-placeholder) .doctor-photo-card__image{
+  object-fit: contain;
+  object-position: center bottom;
+  padding: 10px 0 0;
+  transform: scale(1.06);
+  transform-origin: center bottom;
+  filter: drop-shadow(0 18px 34px rgba(22,48,71,.10));
+}
+.doctor-photo-card:not(.is-placeholder) .doctor-photo-card__media::before{
+  background:
+    radial-gradient(circle at 78% 17%,rgba(247,222,120,.82) 0 58px,transparent 59px),
+    radial-gradient(circle at 18% 82%,rgba(216,197,239,.58) 0 100px,transparent 101px),
+    linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.0));
+}
+@media (max-width: 900px){
+  .doctor-photo-card:not(.is-placeholder) .doctor-photo-card__image{
+    transform: scale(1.02);
+    padding-top: 6px;
   }
 }

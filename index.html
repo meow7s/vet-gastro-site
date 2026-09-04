@@ -67,45 +67,11 @@
           <a class="btn btn--ghost" href="about.html">Обо мне</a>
         </div>
       </div>
-
-      <div class="personal-hero__visual">
-        <div class="doctor-photo-card">
-          <div class="doctor-photo-card__top">
-            <span>Винс Михаил Сергеевич</span>
-            <i>gastrolivet</i>
-          </div>
-
-          <div class="doctor-photo-card__media">
-            <!--
-              Чтобы вставить фото позже:
-              1) положите файл assets/profile-photo.webp
-              2) удалите класс "is-placeholder" у doctor-photo-card
-            -->
-            <img class="doctor-photo-card__image"
-                 src="assets/profile-photo.png"
-                 alt="Винс Михаил Сергеевич"
-                 onerror="this.style.display='none'; this.closest('.doctor-photo-card').classList.add('is-placeholder')">
-
-            <div class="doctor-photo-placeholder" aria-hidden="true">
-              <div class="doctor-photo-placeholder__head"></div>
-              <div class="doctor-photo-placeholder__body"></div>
-              <span>место для фотографии</span>
-            </div>
-
-            <div class="doctor-photo-card__shape doctor-photo-card__shape--blue"></div>
-            <div class="doctor-photo-card__shape doctor-photo-card__shape--green"></div>
-            <div class="doctor-photo-card__shape doctor-photo-card__shape--yellow"></div>
-          </div>
-
-          <div class="doctor-photo-card__bottom">
-            <div>
-              <b>Ветеринарный врач</b>
-              <span>терапевт · гастроэнтеролог · диетолог</span>
-            </div>
-            <span class="doctor-photo-card__badge">онлайн</span>
-          </div>
-        </div>
-
+      <div class="personal-hero__visual personal-hero__visual--photo">
+        <div class="hero-photo-halo" aria-hidden="true"></div>
+        <img class="hero-person-photo"
+             src="assets/profile-photo.png"
+             alt="Винс Михаил Сергеевич с собакой">
         <span class="personal-sticker personal-sticker--one">evidence-based</span>
         <span class="personal-sticker personal-sticker--two">ЖКТ + питание</span>
       </div>

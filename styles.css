@@ -4657,3 +4657,91 @@ body > .footer{
 .marquee span {
     font-size: 15px;
 }
+
+
+/* PREMIUM HERO EFFECTS */
+.personal-hero__visual--photo::before,
+.hero .hero-visual::before {
+  content:"";
+  position:absolute;
+  inset:8% 5%;
+  background:radial-gradient(circle, rgba(255,220,110,.28), rgba(255,220,110,0) 65%);
+  filter:blur(18px);
+  z-index:0;
+  animation:softGlow 5s ease-in-out infinite;
+}
+
+@keyframes softGlow {
+  0%,100% {opacity:.45; transform:scale(1);}
+  50% {opacity:.8; transform:scale(1.05);}
+}
+
+.hero-person-photo {
+  animation:heroAppear .9s ease-out both, heroPersonFloat 6.8s ease-in-out infinite .9s !important;
+}
+
+.hero h1,
+.hero .hero-description,
+.hero .hero-buttons,
+.personal-hero__content {
+  animation:heroTextAppear .8s ease-out both;
+}
+
+.hero-description {animation-delay:.15s !important;}
+.hero-buttons {animation-delay:.3s !important;}
+
+@keyframes heroAppear {
+ from {opacity:0; transform:translateY(25px) scale(.98);}
+ to {opacity:1; transform:translateY(0) scale(1);}
+}
+
+@keyframes heroTextAppear {
+ from {opacity:0; transform:translateY(18px);}
+ to {opacity:1; transform:translateY(0);}
+}
+
+/* premium booking button */
+.btn-primary,
+button.primary,
+.header .btn,
+a[href*="consult"] {
+ position:relative;
+ overflow:hidden;
+ box-shadow:0 12px 35px rgba(22,48,71,.18);
+}
+
+.btn-primary::after,
+button.primary::after,
+.header .btn::after,
+a[href*="consult"]::after {
+ content:"✦";
+ position:absolute;
+ top:18%;
+ left:20%;
+ color:rgba(255,255,255,.8);
+ font-size:12px;
+ animation:starDust 2.8s ease-in-out infinite;
+}
+
+.btn-primary::before,
+button.primary::before,
+.header .btn::before,
+a[href*="consult"]::before {
+ content:"";
+ position:absolute;
+ inset:-40%;
+ background:radial-gradient(circle, rgba(255,255,255,.35) 0 1px, transparent 2px);
+ background-size:28px 28px;
+ opacity:.35;
+ animation:dustMove 6s linear infinite;
+}
+
+@keyframes starDust {
+ 0%,100% {transform:translate(0,0);opacity:.2}
+ 50% {transform:translate(45px,12px);opacity:1}
+}
+
+@keyframes dustMove {
+ from {transform:translateX(-20px);}
+ to {transform:translateX(20px);}
+}

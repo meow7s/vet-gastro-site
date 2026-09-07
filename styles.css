@@ -4786,24 +4786,26 @@ body > .footer{
 @keyframes ctaShine {0%,55%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
 
 
-/* FIX: full highlight for hero phrase */
-.hero h1 em,
-.personal-hero h1 em {
-    position: relative;
-    z-index: 0;
-    text-decoration: none !important;
-    background: none !important;
+/* FINAL FIX: unified yellow accent for full phrase */
+.personal-statement h2 em{
+  display:inline;
+  position:relative;
+  color:var(--coral);
+  font-style:normal;
+  text-decoration:none !important;
+  z-index:0;
 }
-
-.hero h1 em::after,
-.personal-hero h1 em::after {
-    content: "";
-    position: absolute;
-    left: -0.02em;
-    right: -0.02em;
-    bottom: 0.06em;
-    height: 0.18em;
-    background: #f6dd63;
-    z-index: -1;
-    border-radius: 3px;
+.personal-statement h2 em::after{
+  display:none !important;
+}
+.personal-statement h2 em::before{
+  content:"";
+  position:absolute;
+  left:-0.03em;
+  right:-0.03em;
+  bottom:0.02em;
+  height:0.13em;
+  background:#f6dd63;
+  z-index:-1;
+  transform:rotate(-1deg);
 }

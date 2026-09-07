@@ -4809,3 +4809,13 @@ body > .footer{
   z-index:-1;
   transform:rotate(-1deg);
 }
+
+
+/* Site version label */
+.site-version {
+  margin-left: 16px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  color: rgba(22,48,71,.45);
+  text-transform: uppercase;
+}

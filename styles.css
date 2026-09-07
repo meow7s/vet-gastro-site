@@ -744,9 +744,10 @@ body.lightbox-open{overflow:hidden}
 }
 .portfolio-overview__top p{
   margin:0;
-  font-size:13px;
-  opacity:.7;
-  max-width:410px;
+  font-size:16px;
+  line-height:1.55;
+  opacity:.82;
+  max-width:620px;
 }
 .portfolio-stats{
   display:grid;
@@ -754,25 +755,27 @@ body.lightbox-open{overflow:hidden}
   gap:14px;
 }
 .portfolio-stat{
-  min-height:230px;
-  padding:22px;
+  min-height:180px;
+  padding:20px 22px 18px;
   border-radius:26px;
   border:1px solid var(--line);
   display:flex;
   flex-direction:column;
 }
-.portfolio-stat span{font-size:10px;font-weight:850;opacity:.55}
+.portfolio-stat span{font-size:11px;font-weight:850;opacity:.62;letter-spacing:.02em}
 .portfolio-stat b{
-  margin-top:34px;
+  margin-top:18px;
   font-size:58px;
   line-height:1;
   letter-spacing:-.065em;
 }
 .portfolio-stat p{
-  margin:auto 0 0;
-  font-size:11px;
-  max-width:180px;
-  opacity:.7;
+  margin:14px 0 0;
+  font-size:15px;
+  line-height:1.42;
+  max-width:none;
+  opacity:.84;
+  text-wrap:balance;
 }
 .portfolio-stat--yellow{background:var(--yellow)}
 .portfolio-stat--violet{background:var(--lavender)}
@@ -4605,143 +4608,179 @@ body > .footer{
 }
 
 
-/* PREMIUM HERO REFINEMENT */
-.hero h1 {
-    letter-spacing: -0.055em;
-    line-height: 0.92;
-}
-
-.hero .hero-description,
-.personal-hero__description {
-    max-width: 680px;
-    font-size: 21px;
-    line-height: 1.55;
-    color: #607487;
-    letter-spacing: -0.01em;
-}
-
-.hero .eyebrow,
-.personal-hero__eyebrow {
-    transform: translateY(-4px);
-    opacity: .95;
-    letter-spacing: .18em;
-}
-
-.hero {
-    padding-top: 36px;
-    padding-bottom: 54px;
-}
-
-.hero .accent,
-.hero h1 .highlight {
-    position: relative;
-    z-index: 1;
-}
-
-.hero h1 .highlight::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: .08em;
-    height: .16em;
-    background: #f6dd63;
-    z-index: -1;
-    opacity: .85;
-}
-
-.marquee {
-    letter-spacing: .06em;
-}
-
-.marquee span {
-    font-size: 15px;
+@media (max-width: 900px){
+  .portfolio-overview__top p{font-size:15px;max-width:100%;}
+  .portfolio-stat{min-height:170px;padding:18px 18px 16px;}
+  .portfolio-stat b{font-size:50px;margin-top:14px;}
+  .portfolio-stat p{font-size:14px;}
 }
 
 
-/* PREMIUM HERO EFFECTS */
-.personal-hero__visual--photo::before,
-.hero .hero-visual::before {
+/* ==========================================
+   FINAL HOMEPAGE PHOTO — direct transparent cutout
+   ========================================== */
+.personal-hero__visual--photo{
+  position:relative;
+  min-height:620px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  overflow:visible;
+}
+.personal-hero__visual--photo .hero-photo-halo{
+  position:absolute;
+  z-index:0;
+  left:50%;
+  top:52%;
+  width:min(92%,560px);
+  aspect-ratio:1/1;
+  transform:translate(-50%,-50%);
+  border-radius:48% 52% 56% 44% / 47% 43% 57% 53%;
+  background:
+    radial-gradient(circle at 72% 20%,rgba(247,222,120,.36) 0 15%,transparent 16%),
+    radial-gradient(circle at 18% 76%,rgba(216,197,239,.28) 0 23%,transparent 24%),
+    radial-gradient(circle at 66% 70%,rgba(197,228,235,.30) 0 27%,transparent 28%);
+  filter:blur(1px);
+  opacity:.82;
+  animation:heroPhotoHaloFloat 8s ease-in-out infinite;
+  pointer-events:none;
+}
+.personal-hero__visual--photo .hero-person-photo{
+  position:relative;
+  z-index:2;
+  display:block;
+  width:min(100%,760px);
+  max-width:760px;
+  height:auto;
+  margin-right:0;
+  margin-left:0;
+  filter:drop-shadow(0 24px 30px rgba(22,48,71,.12));
+  transform-origin:center bottom;
+  animation:heroPersonFloat 6.8s ease-in-out infinite;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+.personal-hero__visual--photo::after{
   content:"";
   position:absolute;
-  inset:8% 5%;
-  background:radial-gradient(circle, rgba(255,220,110,.28), rgba(255,220,110,0) 65%);
+  z-index:1;
+  left:50%;
+  bottom:16px;
+  width:min(76%,500px);
+  height:30px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:rgba(22,48,71,.10);
   filter:blur(18px);
+  opacity:.55;
+  pointer-events:none;
+}
+.personal-hero__visual--photo .personal-sticker--one{
+  z-index:4;
+  right:1%;
+  top:18%;
+}
+.personal-hero__visual--photo .personal-sticker--two{
+  z-index:4;
+  left:1%;
+  bottom:13%;
+}
+@keyframes heroPersonFloat{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-6px,0)}
+}
+@keyframes heroPhotoHaloFloat{
+  0%,100%{transform:translate(-50%,-50%) rotate(0deg)}
+  50%{transform:translate(-50%,-51%) rotate(2deg)}
+}
+@media (max-width:1050px){
+  .personal-hero__visual--photo{
+    min-height:560px;
+    margin-top:-10px;
+  }
+  .personal-hero__visual--photo .hero-person-photo{
+    width:min(92vw,680px);
+    max-width:680px;
+    margin-right:0;
+  }
+}
+@media (max-width:760px){
+  .personal-hero__visual--photo{
+    min-height:420px;
+    margin-top:8px;
+  }
+  .personal-hero__visual--photo .hero-person-photo{
+    width:min(96vw,520px);
+    max-width:520px;
+    margin-right:0;
+  }
+  .personal-hero__visual--photo .hero-photo-halo{
+    width:min(92vw,430px);
+  }
+  .personal-hero__visual--photo .personal-sticker--one{
+    right:0;
+    top:12%;
+  }
+  .personal-hero__visual--photo .personal-sticker--two{
+    left:0;
+    bottom:8%;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .personal-hero__visual--photo .hero-person-photo,
+  .personal-hero__visual--photo .hero-photo-halo{
+    animation:none!important;
+  }
+}
+
+
+/* VERIFIED FINAL POLISH */
+.personal-statement__index,
+.personal-section-head > span:first-child {
+  font-size:0 !important;
+  display:none !important;
+}
+.personal-statement__bottom p {
+  font-size:20px !important;
+  line-height:1.55 !important;
+  max-width:760px !important;
+}
+.personal-section-head h2 {
+  font-size:clamp(34px,4vw,52px) !important;
+}
+.personal-statement h2 em {
+  position:relative;
+  text-decoration:none !important;
   z-index:0;
-  animation:softGlow 5s ease-in-out infinite;
 }
-
-@keyframes softGlow {
-  0%,100% {opacity:.45; transform:scale(1);}
-  50% {opacity:.8; transform:scale(1.05);}
+.personal-statement h2 em::before {
+  content:"";
+  position:absolute;
+  left:-3px;
+  right:-3px;
+  bottom:.18em;
+  height:.18em;
+  background:#f5dc61;
+  z-index:-1;
+  transform:rotate(-1deg);
 }
-
-.hero-person-photo {
-  animation:heroAppear .9s ease-out both, heroPersonFloat 6.8s ease-in-out infinite .9s !important;
+.personal-hero__visual--photo .hero-person-photo {
+  object-fit:contain !important;
+  max-width:760px !important;
 }
-
-.hero h1,
-.hero .hero-description,
-.hero .hero-buttons,
-.personal-hero__content {
-  animation:heroTextAppear .8s ease-out both;
+.personal-hero__visual--photo .hero-photo-halo {
+  opacity:.9;
 }
-
-.hero-description {animation-delay:.15s !important;}
-.hero-buttons {animation-delay:.3s !important;}
-
-@keyframes heroAppear {
- from {opacity:0; transform:translateY(25px) scale(.98);}
- to {opacity:1; transform:translateY(0) scale(1);}
+.header__cta,
+.btn--primary {
+  overflow:hidden;
 }
-
-@keyframes heroTextAppear {
- from {opacity:0; transform:translateY(18px);}
- to {opacity:1; transform:translateY(0);}
+.header__cta::after,
+.btn--primary::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.65) 45%,transparent 70%);
+  animation:ctaShine 3.8s infinite;
 }
-
-/* premium booking button */
-.btn-primary,
-button.primary,
-.header .btn,
-a[href*="consult"] {
- position:relative;
- overflow:hidden;
- box-shadow:0 12px 35px rgba(22,48,71,.18);
-}
-
-.btn-primary::after,
-button.primary::after,
-.header .btn::after,
-a[href*="consult"]::after {
- content:"✦";
- position:absolute;
- top:18%;
- left:20%;
- color:rgba(255,255,255,.8);
- font-size:12px;
- animation:starDust 2.8s ease-in-out infinite;
-}
-
-.btn-primary::before,
-button.primary::before,
-.header .btn::before,
-a[href*="consult"]::before {
- content:"";
- position:absolute;
- inset:-40%;
- background:radial-gradient(circle, rgba(255,255,255,.35) 0 1px, transparent 2px);
- background-size:28px 28px;
- opacity:.35;
- animation:dustMove 6s linear infinite;
-}
-
-@keyframes starDust {
- 0%,100% {transform:translate(0,0);opacity:.2}
- 50% {transform:translate(45px,12px);opacity:1}
-}
-
-@keyframes dustMove {
- from {transform:translateX(-20px);}
- to {transform:translateX(20px);}
-}
+@keyframes ctaShine {0%,55%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}

@@ -1425,10 +1425,24 @@ body.lightbox-open{overflow:hidden}
 .personal-statement h2{
   margin:0;max-width:1120px;font-size:clamp(54px,7vw,104px);line-height:.88;letter-spacing:-.073em
 }
-.personal-statement h2 em{position:relative;color:var(--coral);font-style:normal}
+.personal-statement h2 em{
+  position:relative;
+  display:inline;
+  color:var(--coral);
+  font-style:normal;
+  isolation:isolate;
+}
 .personal-statement h2 em::after{
-  content:"";position:absolute;left:1%;right:-1%;bottom:2px;height:10px;z-index:-1;
-  background:var(--yellow);transform:rotate(-1deg)
+  content:"";
+  position:absolute;
+  left:-1%;
+  right:-1%;
+  bottom:.12em;
+  height:.16em;
+  z-index:-1;
+  background:var(--yellow);
+  transform:rotate(-1deg);
+  border-radius:2px;
 }
 .personal-statement__bottom{
   display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-top:32px

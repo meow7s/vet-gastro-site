@@ -4833,3 +4833,23 @@ body > .footer{
   color: rgba(22,48,71,.45);
   text-transform: uppercase;
 }
+
+
+/* v 2.8.9 — unified highlight for the phrase "без лишних назначений" */
+.personal-statement h2 .highlight-text {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.personal-statement h2 .highlight-text::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: 10px;
+  height: 14px;
+  background: #F8DC55;
+  border-radius: 3px;
+  z-index: -1;
+}

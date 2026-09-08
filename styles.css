@@ -4853,3 +4853,27 @@ body > .footer{
     border-radius: 2px;
     z-index: -1;
 }
+
+
+/* ===== v 4.8.9 hero highlight fix ===== */
+/* Override old em/highlight rules */
+.personal-statement h2 .hero-highlight,
+.personal-statement h2 em.hero-highlight {
+    position: relative;
+    display: inline-block;
+    color: #FF865E;
+    font-style: normal;
+    z-index: 1;
+}
+
+.personal-statement h2 .hero-highlight::after {
+    content: "";
+    position: absolute;
+    left: -8px;
+    right: -8px;
+    bottom: -14px;
+    height: 12px;
+    background: #F8DC55;
+    border-radius: 3px;
+    z-index: -1;
+}

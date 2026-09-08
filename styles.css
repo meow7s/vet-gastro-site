@@ -4878,7 +4878,7 @@ body > .footer{
     z-index: -1;
 }
 
-/* v 5.8.9 - compact specialization cards */
+/* v 6.8.9 - compact specialization cards */
 .shortcut-card {
   min-height: 205px;
 }
@@ -4891,3 +4891,26 @@ body > .footer{
   margin-top: 12px;
 }
 
+
+
+/* v 6.8.9 — compact direction cards */
+.direction-card .number,
+.direction-card .card-number,
+.direction-card .index,
+.specialization-card .number {
+    display: none !important;
+}
+
+/* Compact cards height */
+.direction-card,
+.specialization-card {
+    min-height: 180px !important;
+    height: 180px !important;
+    padding-top: 32px !important;
+    padding-bottom: 28px !important;
+}
+
+.direction-card h3,
+.specialization-card h3 {
+    margin-top: 0 !important;
+}

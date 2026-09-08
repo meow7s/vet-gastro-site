@@ -4973,3 +4973,33 @@ body > .footer{
 .contact-visual img {
     display: none !important;
 }
+
+
+/* v 9.8.9 — precise personal cards correction */
+.shortcut-card {
+    min-height: 165px !important;
+    height: 165px !important;
+    padding: 26px 24px !important;
+}
+
+.shortcut-card p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    max-width: 95%;
+    color: #52697d !important;
+}
+
+.shortcut-card h3 {
+    margin-bottom: 10px !important;
+}
+
+.personal-contact__content > p {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+    max-width: 720px;
+    color: #52697d !important;
+}
+
+.personal-contact__visual {
+    display: none !important;
+}

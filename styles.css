@@ -4834,22 +4834,22 @@ body > .footer{
   text-transform: uppercase;
 }
 
-
-/* v 2.8.9 — unified highlight for the phrase "без лишних назначений" */
-.personal-statement h2 .highlight-text {
-  position: relative;
-  display: inline-block;
-  z-index: 1;
+/* v 3.8.9 highlight correction */
+.hero-highlight {
+    position: relative;
+    display: inline-block;
+    color: #FF865E;
+    z-index: 1;
 }
 
-.personal-statement h2 .highlight-text::after {
-  content: "";
-  position: absolute;
-  left: -4px;
-  right: -4px;
-  bottom: 10px;
-  height: 14px;
-  background: #F8DC55;
-  border-radius: 3px;
-  z-index: -1;
+.hero-highlight::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    bottom: -8px;
+    height: 12px;
+    background: #F8DC55;
+    border-radius: 2px;
+    z-index: -1;
 }

@@ -5003,3 +5003,84 @@ body > .footer{
 .personal-contact__visual {
     display: none !important;
 }
+
+
+/* =========================================================
+   v 10.8.9 — FINAL FIX: homepage navigation + contact block
+   Uses the REAL classes from index.html.
+   ========================================================= */
+
+/* О враче / Услуги / Достижения / FAQ:
+   remove excess vertical air and make the cards genuinely shorter. */
+.personal-navigation .personal-nav-card {
+  min-height: 190px !important;
+  height: auto !important;
+  padding: 20px 22px 18px !important;
+}
+
+/* Remove the large 44px gap that created the empty area above the title. */
+.personal-navigation .personal-nav-card h3 {
+  margin: 8px 0 8px !important;
+}
+
+/* Make the description under each card title clearly more readable. */
+.personal-navigation .personal-nav-card p {
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.48 !important;
+  opacity: .82 !important;
+}
+
+/* Keep the lower action compact instead of stretching the card vertically. */
+.personal-navigation .personal-nav-card b {
+  margin-top: auto !important;
+  padding-top: 12px !important;
+  font-size: 10.5px !important;
+}
+
+/* The logo in the contact block has been removed from HTML.
+   Keep an empty place ready for the user's future photo. */
+.personal-contact__photo-slot {
+  min-height: 190px;
+  width: 100%;
+}
+
+/* Make sure the old logo container can never appear in this block. */
+.personal-contact__logo {
+  display: none !important;
+}
+
+/* Contact explanatory copy: larger and more readable. */
+.personal-contact__copy p {
+  max-width: 720px !important;
+  margin: 0 !important;
+  font-size: 15.5px !important;
+  line-height: 1.55 !important;
+  opacity: .80 !important;
+}
+
+/* Responsive safety: cards stay compact but never clip text. */
+@media (max-width: 1050px) {
+  .personal-navigation .personal-nav-card {
+    min-height: 180px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .personal-navigation .personal-nav-card {
+    min-height: 170px !important;
+    padding: 18px 20px 16px !important;
+  }
+
+  .personal-navigation .personal-nav-card p {
+    font-size: 14px !important;
+  }
+
+  .personal-contact__copy p {
+    font-size: 15px !important;
+  }
+
+  .personal-contact__photo-slot {
+    min-height: 120px;
+  }
+}

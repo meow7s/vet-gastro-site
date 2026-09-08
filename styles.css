@@ -4878,7 +4878,7 @@ body > .footer{
     z-index: -1;
 }
 
-/* v 7.8.9 - compact specialization cards */
+/* v 8.8.9 - compact specialization cards */
 .shortcut-card {
   min-height: 205px;
 }
@@ -4893,7 +4893,7 @@ body > .footer{
 
 
 
-/* v 7.8.9 — compact direction cards */
+/* v 8.8.9 — compact direction cards */
 .direction-card .number,
 .direction-card .card-number,
 .direction-card .index,
@@ -4916,7 +4916,7 @@ body > .footer{
 }
 
 
-/* v 7.8.9 — direction cards correction */
+/* v 8.8.9 — direction cards correction */
 .expertise-card {
     min-height: 0 !important;
     height: 170px !important;
@@ -4939,3 +4939,37 @@ body > .footer{
     margin-top: 0 !important;
 }
 
+
+
+/* v 8.8.9 — info cards compact/readable */
+.personal-section-card,
+.info-card,
+.page-card {
+    min-height: 210px !important;
+    padding-top: 28px !important;
+    padding-bottom: 24px !important;
+}
+
+.personal-section-card p,
+.info-card p,
+.page-card p {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    color: #61758a;
+}
+
+.personal-section-head > p {
+    display: none !important;
+}
+
+.contact-card p,
+.cta-contact p {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+}
+
+.contact-card img,
+.cta-contact img,
+.contact-visual img {
+    display: none !important;
+}

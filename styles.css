@@ -4877,3 +4877,17 @@ body > .footer{
     border-radius: 3px;
     z-index: -1;
 }
+
+/* v 5.8.9 - compact specialization cards */
+.shortcut-card {
+  min-height: 205px;
+}
+
+.shortcut-card > span:first-child {
+  display: none;
+}
+
+.shortcut-card h3 {
+  margin-top: 12px;
+}
+

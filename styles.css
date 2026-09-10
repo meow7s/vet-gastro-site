@@ -4834,7 +4834,7 @@ body > .footer{
   text-transform: uppercase;
 }
 
-/* v 3.8.9 highlight correction */
+/* v 11.8.9 highlight correction */
 .hero-highlight {
     position: relative;
     display: inline-block;
@@ -4855,7 +4855,7 @@ body > .footer{
 }
 
 
-/* ===== v 4.8.9 hero highlight fix ===== */
+/* ===== v 11.8.9 hero highlight fix ===== */
 /* Override old em/highlight rules */
 .personal-statement h2 .hero-highlight,
 .personal-statement h2 em.hero-highlight {
@@ -4878,7 +4878,7 @@ body > .footer{
     z-index: -1;
 }
 
-/* v 8.8.9 - compact specialization cards */
+/* v 11.8.9 - compact specialization cards */
 .shortcut-card {
   min-height: 205px;
 }
@@ -4893,7 +4893,7 @@ body > .footer{
 
 
 
-/* v 8.8.9 — compact direction cards */
+/* v 11.8.9 — compact direction cards */
 .direction-card .number,
 .direction-card .card-number,
 .direction-card .index,
@@ -4916,7 +4916,7 @@ body > .footer{
 }
 
 
-/* v 8.8.9 — direction cards correction */
+/* v 11.8.9 — direction cards correction */
 .expertise-card {
     min-height: 0 !important;
     height: 170px !important;
@@ -4941,7 +4941,7 @@ body > .footer{
 
 
 
-/* v 8.8.9 — info cards compact/readable */
+/* v 11.8.9 — info cards compact/readable */
 .personal-section-card,
 .info-card,
 .page-card {
@@ -4975,7 +4975,7 @@ body > .footer{
 }
 
 
-/* v 9.8.9 — precise personal cards correction */
+/* v 11.8.9 — precise personal cards correction */
 .shortcut-card {
     min-height: 165px !important;
     height: 165px !important;
@@ -5006,7 +5006,7 @@ body > .footer{
 
 
 /* =========================================================
-   v 10.8.9 — FINAL FIX: homepage navigation + contact block
+   v 11.8.9 — FINAL FIX: homepage navigation + contact block
    Uses the REAL classes from index.html.
    ========================================================= */
 
@@ -5082,5 +5082,77 @@ body > .footer{
 
   .personal-contact__photo-slot {
     min-height: 120px;
+  }
+}
+
+
+/* =========================================================
+   v 11.8.9 — Contact section photo update
+   Added transparent personal photo without underlay.
+   ========================================================= */
+.personal-contact__box{
+  grid-template-columns:minmax(240px,.72fr) 1.18fr auto !important;
+  gap:28px !important;
+  align-items:center !important;
+  min-height:356px !important;
+  background:linear-gradient(135deg,var(--lavender),#f5eee5) !important;
+}
+.personal-contact__visual{
+  min-height:300px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-start;
+  overflow:visible;
+}
+.personal-contact__photo{
+  display:block;
+  width:min(100%,300px);
+  max-height:320px;
+  height:auto;
+  object-fit:contain;
+  object-position:left bottom;
+  filter:drop-shadow(0 14px 26px rgba(22,48,71,.12));
+}
+.personal-contact__photo-slot,
+.personal-contact__logo{
+  display:none !important;
+}
+.personal-contact__copy p{
+  max-width:680px !important;
+}
+@media (max-width:1050px){
+  .personal-contact__box{
+    grid-template-columns:minmax(220px,.72fr) 1fr !important;
+  }
+  .personal-contact__visual{
+    min-height:260px;
+  }
+  .personal-contact__photo{
+    width:min(100%,260px);
+    max-height:280px;
+  }
+  .personal-contact__action{
+    grid-column:2 !important;
+  }
+}
+@media (max-width:760px){
+  .personal-contact__box{
+    grid-template-columns:1fr !important;
+    padding:30px 24px !important;
+    gap:18px !important;
+    min-height:auto !important;
+  }
+  .personal-contact__visual{
+    order:-1;
+    justify-content:center;
+    min-height:220px;
+  }
+  .personal-contact__photo{
+    width:min(100%,240px);
+    max-height:240px;
+    object-position:center bottom;
+  }
+  .personal-contact__action{
+    grid-column:auto !important;
   }
 }
